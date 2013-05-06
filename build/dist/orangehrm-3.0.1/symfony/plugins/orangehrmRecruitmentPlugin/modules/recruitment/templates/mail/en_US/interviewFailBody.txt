@@ -1,0 +1,14 @@
+Hi %recipientFirstName%,
+
+%candidateName% who applied for %vacancyName% vacancy not able to clear the interview. 
+
+Please login to OrangeHRM and reject the candidate.
+
+You were sent this mail, as you are hiring manager for %vacancyName% or synerzip HR.
+
+
+
+Thank you.
+Synerzip HRMS
+
+Note: This is an automated notification. Please don't reply to this mail.

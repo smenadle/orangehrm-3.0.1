@@ -1,0 +1,342 @@
+[03-May-2013 09:41:09 UTC] PHP Fatal error:  Class 'AddCandidateMailer' not found in C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\lib\form\AddCandidateForm.php on line 307
+[03-May-2013 09:41:09 UTC] PHP Stack trace:
+[03-May-2013 09:41:09 UTC] PHP   1. {main}() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:0
+[03-May-2013 09:41:09 UTC] PHP   2. sfContext->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:22
+[03-May-2013 09:41:09 UTC] PHP   3. sfFrontWebController->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\util\sfContext.class.php:170
+[03-May-2013 09:41:09 UTC] PHP   4. sfController->forward() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:2352
+[03-May-2013 09:41:09 UTC] PHP   5. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:665
+[03-May-2013 09:41:09 UTC] PHP   6. sfRenderingFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP   7. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:995
+[03-May-2013 09:41:09 UTC] PHP   8. sfBasicSecurityFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP   9. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfBasicSecurityFilter.class.php:72
+[03-May-2013 09:41:09 UTC] PHP  10. ExceptionCatcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP  11. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ExceptionCatcherFilter.php:26
+[03-May-2013 09:41:09 UTC] PHP  12. OrangeI18NFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP  13. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\OrangeI18NFilter.php:58
+[03-May-2013 09:41:09 UTC] PHP  14. SessionInfoFetcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP  15. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\SessionInfoFetcherFilter.php:67
+[03-May-2013 09:41:09 UTC] PHP  16. ohrmAuthorizationFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP  17. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\authorization\filter\ohrmAuthorizationFilter.php:97
+[03-May-2013 09:41:09 UTC] PHP  18. ModuleFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP  19. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ModuleFilter.php:56
+[03-May-2013 09:41:09 UTC] PHP  20. orangehrmPostExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP  21. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmPostExecutionFilter.php:22
+[03-May-2013 09:41:09 UTC] PHP  22. sfCommonFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP  23. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfCommonFilter.class.php:29
+[03-May-2013 09:41:09 UTC] PHP  24. sfExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 09:41:09 UTC] PHP  25. sfExecutionFilter->handleAction() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:933
+[03-May-2013 09:41:09 UTC] PHP  26. orangehrmExecutionFilter->executeAction() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:947
+[03-May-2013 09:41:09 UTC] PHP  27. sfExecutionFilter->executeAction() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmExecutionFilter.php:36
+[03-May-2013 09:41:09 UTC] PHP  28. addCandidateAction->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:952
+[03-May-2013 09:41:09 UTC] PHP  29. AddCandidateForm->save() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\modules\recruitment\actions\addCandidateAction.class.php:127
+[03-May-2013 10:10:17 UTC] PHP Fatal error:  Class 'AddCandidateMailer' not found in C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\lib\form\AddCandidateForm.php on line 307
+[03-May-2013 10:10:17 UTC] PHP Stack trace:
+[03-May-2013 10:10:17 UTC] PHP   1. {main}() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:0
+[03-May-2013 10:10:17 UTC] PHP   2. sfContext->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:22
+[03-May-2013 10:10:17 UTC] PHP   3. sfFrontWebController->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\util\sfContext.class.php:170
+[03-May-2013 10:10:17 UTC] PHP   4. sfController->forward() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:2352
+[03-May-2013 10:10:17 UTC] PHP   5. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:665
+[03-May-2013 10:10:17 UTC] PHP   6. sfRenderingFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP   7. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:995
+[03-May-2013 10:10:17 UTC] PHP   8. sfBasicSecurityFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP   9. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfBasicSecurityFilter.class.php:72
+[03-May-2013 10:10:17 UTC] PHP  10. ExceptionCatcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP  11. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ExceptionCatcherFilter.php:26
+[03-May-2013 10:10:17 UTC] PHP  12. OrangeI18NFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP  13. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\OrangeI18NFilter.php:58
+[03-May-2013 10:10:17 UTC] PHP  14. SessionInfoFetcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP  15. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\SessionInfoFetcherFilter.php:67
+[03-May-2013 10:10:17 UTC] PHP  16. ohrmAuthorizationFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP  17. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\authorization\filter\ohrmAuthorizationFilter.php:97
+[03-May-2013 10:10:17 UTC] PHP  18. ModuleFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP  19. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ModuleFilter.php:56
+[03-May-2013 10:10:17 UTC] PHP  20. orangehrmPostExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP  21. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmPostExecutionFilter.php:22
+[03-May-2013 10:10:17 UTC] PHP  22. sfCommonFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP  23. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfCommonFilter.class.php:29
+[03-May-2013 10:10:17 UTC] PHP  24. sfExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 10:10:17 UTC] PHP  25. sfExecutionFilter->handleAction() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:933
+[03-May-2013 10:10:17 UTC] PHP  26. orangehrmExecutionFilter->executeAction() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:947
+[03-May-2013 10:10:17 UTC] PHP  27. sfExecutionFilter->executeAction() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmExecutionFilter.php:36
+[03-May-2013 10:10:17 UTC] PHP  28. addCandidateAction->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:952
+[03-May-2013 10:10:17 UTC] PHP  29. AddCandidateForm->save() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\modules\recruitment\actions\addCandidateAction.class.php:127
+05/03/13 12:44:21,909 [5156] INFO core.email - ========== Message Begins ==========
+
+Time : May 3, 2013, 12:44 pm
+Message Type : Success
+Message : Emails was sent to sunil@synerzip.com using smtp
+
+========== Message Ends ==========
+
+
+[03-May-2013 11:22:53 UTC] PHP Fatal error:  Call to a member function populateFromArray() on a non-object in C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\CandidateHeaderFactory.php on line 66
+[03-May-2013 11:22:53 UTC] PHP Stack trace:
+[03-May-2013 11:22:53 UTC] PHP   1. {main}() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:0
+[03-May-2013 11:22:53 UTC] PHP   2. sfContext->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:22
+[03-May-2013 11:22:53 UTC] PHP   3. sfFrontWebController->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\util\sfContext.class.php:170
+[03-May-2013 11:22:53 UTC] PHP   4. sfController->forward() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:2352
+[03-May-2013 11:22:53 UTC] PHP   5. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:665
+[03-May-2013 11:22:53 UTC] PHP   6. sfRenderingFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP   7. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:995
+[03-May-2013 11:22:53 UTC] PHP   8. sfBasicSecurityFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP   9. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfBasicSecurityFilter.class.php:72
+[03-May-2013 11:22:53 UTC] PHP  10. ExceptionCatcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP  11. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ExceptionCatcherFilter.php:26
+[03-May-2013 11:22:53 UTC] PHP  12. OrangeI18NFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP  13. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\OrangeI18NFilter.php:58
+[03-May-2013 11:22:53 UTC] PHP  14. SessionInfoFetcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP  15. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\SessionInfoFetcherFilter.php:67
+[03-May-2013 11:22:53 UTC] PHP  16. ohrmAuthorizationFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP  17. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\authorization\filter\ohrmAuthorizationFilter.php:97
+[03-May-2013 11:22:53 UTC] PHP  18. ModuleFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP  19. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ModuleFilter.php:56
+[03-May-2013 11:22:53 UTC] PHP  20. orangehrmPostExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP  21. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmPostExecutionFilter.php:22
+[03-May-2013 11:22:53 UTC] PHP  22. sfCommonFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP  23. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfCommonFilter.class.php:29
+[03-May-2013 11:22:53 UTC] PHP  24. sfExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:53 UTC] PHP  25. sfExecutionFilter->handleView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:934
+[03-May-2013 11:22:53 UTC] PHP  26. sfExecutionFilter->executeView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:966
+[03-May-2013 11:22:53 UTC] PHP  27. sfPHPView->render() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:979
+[03-May-2013 11:22:53 UTC] PHP  28. sfPHPView->renderFile() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3910
+[03-May-2013 11:22:53 UTC] PHP  29. require() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3851
+[03-May-2013 11:22:53 UTC] PHP  30. include_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\modules\recruitment\templates\viewCandidatesSuccess.php:55
+[03-May-2013 11:22:53 UTC] PHP  31. get_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:115
+[03-May-2013 11:22:53 UTC] PHP  32. _call_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:150
+[03-May-2013 11:22:53 UTC] PHP  33. ohrmListComponent->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:388
+[03-May-2013 11:22:53 UTC] PHP  34. ohrmListConfigurationFactory->showGroupHeaders() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\modules\core\actions\ohrmListComponent.class.php:55
+[03-May-2013 11:22:53 UTC] PHP  35. ohrmListConfigurationFactory->__init() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\ohrmListHeaderFactory.php:34
+[03-May-2013 11:22:53 UTC] PHP  36. CandidateHeaderFactory->init() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\ohrmListHeaderFactory.php:167
+[03-May-2013 11:22:59 UTC] PHP Fatal error:  Call to a member function populateFromArray() on a non-object in C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\CandidateHeaderFactory.php on line 66
+[03-May-2013 11:22:59 UTC] PHP Stack trace:
+[03-May-2013 11:22:59 UTC] PHP   1. {main}() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:0
+[03-May-2013 11:22:59 UTC] PHP   2. sfContext->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:22
+[03-May-2013 11:22:59 UTC] PHP   3. sfFrontWebController->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\util\sfContext.class.php:170
+[03-May-2013 11:22:59 UTC] PHP   4. sfController->forward() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:2352
+[03-May-2013 11:22:59 UTC] PHP   5. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:665
+[03-May-2013 11:22:59 UTC] PHP   6. sfRenderingFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP   7. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:995
+[03-May-2013 11:22:59 UTC] PHP   8. sfBasicSecurityFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP   9. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfBasicSecurityFilter.class.php:72
+[03-May-2013 11:22:59 UTC] PHP  10. ExceptionCatcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP  11. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ExceptionCatcherFilter.php:26
+[03-May-2013 11:22:59 UTC] PHP  12. OrangeI18NFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP  13. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\OrangeI18NFilter.php:58
+[03-May-2013 11:22:59 UTC] PHP  14. SessionInfoFetcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP  15. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\SessionInfoFetcherFilter.php:67
+[03-May-2013 11:22:59 UTC] PHP  16. ohrmAuthorizationFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP  17. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\authorization\filter\ohrmAuthorizationFilter.php:97
+[03-May-2013 11:22:59 UTC] PHP  18. ModuleFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP  19. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ModuleFilter.php:56
+[03-May-2013 11:22:59 UTC] PHP  20. orangehrmPostExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP  21. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmPostExecutionFilter.php:22
+[03-May-2013 11:22:59 UTC] PHP  22. sfCommonFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP  23. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfCommonFilter.class.php:29
+[03-May-2013 11:22:59 UTC] PHP  24. sfExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:22:59 UTC] PHP  25. sfExecutionFilter->handleView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:934
+[03-May-2013 11:22:59 UTC] PHP  26. sfExecutionFilter->executeView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:966
+[03-May-2013 11:22:59 UTC] PHP  27. sfPHPView->render() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:979
+[03-May-2013 11:22:59 UTC] PHP  28. sfPHPView->renderFile() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3910
+[03-May-2013 11:22:59 UTC] PHP  29. require() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3851
+[03-May-2013 11:22:59 UTC] PHP  30. include_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\modules\recruitment\templates\viewCandidatesSuccess.php:55
+[03-May-2013 11:22:59 UTC] PHP  31. get_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:115
+[03-May-2013 11:22:59 UTC] PHP  32. _call_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:150
+[03-May-2013 11:22:59 UTC] PHP  33. ohrmListComponent->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:388
+[03-May-2013 11:22:59 UTC] PHP  34. ohrmListConfigurationFactory->showGroupHeaders() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\modules\core\actions\ohrmListComponent.class.php:55
+[03-May-2013 11:22:59 UTC] PHP  35. ohrmListConfigurationFactory->__init() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\ohrmListHeaderFactory.php:34
+[03-May-2013 11:22:59 UTC] PHP  36. CandidateHeaderFactory->init() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\ohrmListHeaderFactory.php:167
+[03-May-2013 11:24:28 UTC] PHP Fatal error:  Call to a member function populateFromArray() on a non-object in C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\CandidateHeaderFactory.php on line 66
+[03-May-2013 11:24:28 UTC] PHP Stack trace:
+[03-May-2013 11:24:28 UTC] PHP   1. {main}() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:0
+[03-May-2013 11:24:28 UTC] PHP   2. sfContext->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:22
+[03-May-2013 11:24:28 UTC] PHP   3. sfFrontWebController->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\util\sfContext.class.php:170
+[03-May-2013 11:24:28 UTC] PHP   4. sfController->forward() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:2352
+[03-May-2013 11:24:28 UTC] PHP   5. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:665
+[03-May-2013 11:24:28 UTC] PHP   6. sfRenderingFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP   7. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:995
+[03-May-2013 11:24:28 UTC] PHP   8. sfBasicSecurityFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP   9. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfBasicSecurityFilter.class.php:72
+[03-May-2013 11:24:28 UTC] PHP  10. ExceptionCatcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP  11. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ExceptionCatcherFilter.php:26
+[03-May-2013 11:24:28 UTC] PHP  12. OrangeI18NFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP  13. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\OrangeI18NFilter.php:58
+[03-May-2013 11:24:28 UTC] PHP  14. SessionInfoFetcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP  15. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\SessionInfoFetcherFilter.php:67
+[03-May-2013 11:24:28 UTC] PHP  16. ohrmAuthorizationFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP  17. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\authorization\filter\ohrmAuthorizationFilter.php:97
+[03-May-2013 11:24:28 UTC] PHP  18. ModuleFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP  19. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ModuleFilter.php:56
+[03-May-2013 11:24:28 UTC] PHP  20. orangehrmPostExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP  21. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmPostExecutionFilter.php:22
+[03-May-2013 11:24:28 UTC] PHP  22. sfCommonFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP  23. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfCommonFilter.class.php:29
+[03-May-2013 11:24:28 UTC] PHP  24. sfExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:24:28 UTC] PHP  25. sfExecutionFilter->handleView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:934
+[03-May-2013 11:24:28 UTC] PHP  26. sfExecutionFilter->executeView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:966
+[03-May-2013 11:24:28 UTC] PHP  27. sfPHPView->render() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:979
+[03-May-2013 11:24:28 UTC] PHP  28. sfPHPView->renderFile() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3910
+[03-May-2013 11:24:28 UTC] PHP  29. require() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3851
+[03-May-2013 11:24:28 UTC] PHP  30. include_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\modules\recruitment\templates\viewCandidatesSuccess.php:55
+[03-May-2013 11:24:28 UTC] PHP  31. get_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:115
+[03-May-2013 11:24:28 UTC] PHP  32. _call_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:150
+[03-May-2013 11:24:28 UTC] PHP  33. ohrmListComponent->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:388
+[03-May-2013 11:24:28 UTC] PHP  34. ohrmListConfigurationFactory->showGroupHeaders() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\modules\core\actions\ohrmListComponent.class.php:55
+[03-May-2013 11:24:28 UTC] PHP  35. ohrmListConfigurationFactory->__init() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\ohrmListHeaderFactory.php:34
+[03-May-2013 11:24:28 UTC] PHP  36. CandidateHeaderFactory->init() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\ohrmListHeaderFactory.php:167
+[03-May-2013 11:26:25 UTC] PHP Fatal error:  Call to a member function populateFromArray() on a non-object in C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\CandidateHeaderFactory.php on line 67
+[03-May-2013 11:26:25 UTC] PHP Stack trace:
+[03-May-2013 11:26:25 UTC] PHP   1. {main}() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:0
+[03-May-2013 11:26:25 UTC] PHP   2. sfContext->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:22
+[03-May-2013 11:26:25 UTC] PHP   3. sfFrontWebController->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\util\sfContext.class.php:170
+[03-May-2013 11:26:25 UTC] PHP   4. sfController->forward() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:2352
+[03-May-2013 11:26:25 UTC] PHP   5. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:665
+[03-May-2013 11:26:25 UTC] PHP   6. sfRenderingFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP   7. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:995
+[03-May-2013 11:26:25 UTC] PHP   8. sfBasicSecurityFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP   9. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfBasicSecurityFilter.class.php:72
+[03-May-2013 11:26:25 UTC] PHP  10. ExceptionCatcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP  11. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ExceptionCatcherFilter.php:26
+[03-May-2013 11:26:25 UTC] PHP  12. OrangeI18NFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP  13. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\OrangeI18NFilter.php:58
+[03-May-2013 11:26:25 UTC] PHP  14. SessionInfoFetcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP  15. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\SessionInfoFetcherFilter.php:67
+[03-May-2013 11:26:25 UTC] PHP  16. ohrmAuthorizationFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP  17. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\authorization\filter\ohrmAuthorizationFilter.php:97
+[03-May-2013 11:26:25 UTC] PHP  18. ModuleFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP  19. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ModuleFilter.php:56
+[03-May-2013 11:26:25 UTC] PHP  20. orangehrmPostExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP  21. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmPostExecutionFilter.php:22
+[03-May-2013 11:26:25 UTC] PHP  22. sfCommonFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP  23. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfCommonFilter.class.php:29
+[03-May-2013 11:26:25 UTC] PHP  24. sfExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:26:25 UTC] PHP  25. sfExecutionFilter->handleView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:934
+[03-May-2013 11:26:25 UTC] PHP  26. sfExecutionFilter->executeView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:966
+[03-May-2013 11:26:25 UTC] PHP  27. sfPHPView->render() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:979
+[03-May-2013 11:26:25 UTC] PHP  28. sfPHPView->renderFile() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3910
+[03-May-2013 11:26:25 UTC] PHP  29. require() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3851
+[03-May-2013 11:26:25 UTC] PHP  30. include_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\modules\recruitment\templates\viewCandidatesSuccess.php:55
+[03-May-2013 11:26:25 UTC] PHP  31. get_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:115
+[03-May-2013 11:26:25 UTC] PHP  32. _call_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:150
+[03-May-2013 11:26:25 UTC] PHP  33. ohrmListComponent->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:388
+[03-May-2013 11:26:25 UTC] PHP  34. ohrmListConfigurationFactory->showGroupHeaders() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\modules\core\actions\ohrmListComponent.class.php:55
+[03-May-2013 11:26:25 UTC] PHP  35. ohrmListConfigurationFactory->__init() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\ohrmListHeaderFactory.php:34
+[03-May-2013 11:26:25 UTC] PHP  36. CandidateHeaderFactory->init() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\list\ohrmListHeaderFactory.php:167
+[03-May-2013 11:47:21 UTC] PHP Fatal error:  Method name must be a string in C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\component\Cell.php on line 73
+[03-May-2013 11:47:21 UTC] PHP Stack trace:
+[03-May-2013 11:47:21 UTC] PHP   1. {main}() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:0
+[03-May-2013 11:47:21 UTC] PHP   2. sfContext->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:22
+[03-May-2013 11:47:21 UTC] PHP   3. sfFrontWebController->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\util\sfContext.class.php:170
+[03-May-2013 11:47:21 UTC] PHP   4. sfController->forward() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:2352
+[03-May-2013 11:47:21 UTC] PHP   5. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:665
+[03-May-2013 11:47:21 UTC] PHP   6. sfRenderingFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP   7. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:995
+[03-May-2013 11:47:21 UTC] PHP   8. sfBasicSecurityFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP   9. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfBasicSecurityFilter.class.php:72
+[03-May-2013 11:47:21 UTC] PHP  10. ExceptionCatcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP  11. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ExceptionCatcherFilter.php:26
+[03-May-2013 11:47:21 UTC] PHP  12. OrangeI18NFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP  13. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\OrangeI18NFilter.php:58
+[03-May-2013 11:47:21 UTC] PHP  14. SessionInfoFetcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP  15. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\SessionInfoFetcherFilter.php:67
+[03-May-2013 11:47:21 UTC] PHP  16. ohrmAuthorizationFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP  17. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\authorization\filter\ohrmAuthorizationFilter.php:97
+[03-May-2013 11:47:21 UTC] PHP  18. ModuleFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP  19. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ModuleFilter.php:56
+[03-May-2013 11:47:21 UTC] PHP  20. orangehrmPostExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP  21. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmPostExecutionFilter.php:22
+[03-May-2013 11:47:21 UTC] PHP  22. sfCommonFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP  23. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfCommonFilter.class.php:29
+[03-May-2013 11:47:21 UTC] PHP  24. sfExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:21 UTC] PHP  25. sfExecutionFilter->handleView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:934
+[03-May-2013 11:47:21 UTC] PHP  26. sfExecutionFilter->executeView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:966
+[03-May-2013 11:47:21 UTC] PHP  27. sfPHPView->render() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:979
+[03-May-2013 11:47:21 UTC] PHP  28. sfPHPView->renderFile() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3910
+[03-May-2013 11:47:21 UTC] PHP  29. require() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3851
+[03-May-2013 11:47:21 UTC] PHP  30. include_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\modules\recruitment\templates\viewCandidatesSuccess.php:55
+[03-May-2013 11:47:21 UTC] PHP  31. get_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:115
+[03-May-2013 11:47:21 UTC] PHP  32. sfPartialView->render() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:157
+[03-May-2013 11:47:21 UTC] PHP  33. sfPHPView->renderFile() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\view\sfPartialView.class.php:124
+[03-May-2013 11:47:21 UTC] PHP  34. require() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3851
+[03-May-2013 11:47:21 UTC] PHP  35. LabelCell->__toString() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\modules\core\templates\_ohrmList.php:298
+[03-May-2013 11:47:21 UTC] PHP  36. Cell->getValue() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\component\LabelCell.php:10
+[03-May-2013 11:47:27 UTC] PHP Fatal error:  Method name must be a string in C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\component\Cell.php on line 73
+[03-May-2013 11:47:27 UTC] PHP Stack trace:
+[03-May-2013 11:47:27 UTC] PHP   1. {main}() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:0
+[03-May-2013 11:47:27 UTC] PHP   2. sfContext->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php:22
+[03-May-2013 11:47:27 UTC] PHP   3. sfFrontWebController->dispatch() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\util\sfContext.class.php:170
+[03-May-2013 11:47:27 UTC] PHP   4. sfController->forward() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:2352
+[03-May-2013 11:47:27 UTC] PHP   5. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:665
+[03-May-2013 11:47:27 UTC] PHP   6. sfRenderingFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP   7. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:995
+[03-May-2013 11:47:27 UTC] PHP   8. sfBasicSecurityFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP   9. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfBasicSecurityFilter.class.php:72
+[03-May-2013 11:47:27 UTC] PHP  10. ExceptionCatcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP  11. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ExceptionCatcherFilter.php:26
+[03-May-2013 11:47:27 UTC] PHP  12. OrangeI18NFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP  13. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\OrangeI18NFilter.php:58
+[03-May-2013 11:47:27 UTC] PHP  14. SessionInfoFetcherFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP  15. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\SessionInfoFetcherFilter.php:67
+[03-May-2013 11:47:27 UTC] PHP  16. ohrmAuthorizationFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP  17. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\authorization\filter\ohrmAuthorizationFilter.php:97
+[03-May-2013 11:47:27 UTC] PHP  18. ModuleFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP  19. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ModuleFilter.php:56
+[03-May-2013 11:47:27 UTC] PHP  20. orangehrmPostExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP  21. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmPostExecutionFilter.php:22
+[03-May-2013 11:47:27 UTC] PHP  22. sfCommonFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP  23. sfFilterChain->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfCommonFilter.class.php:29
+[03-May-2013 11:47:27 UTC] PHP  24. sfExecutionFilter->execute() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:1031
+[03-May-2013 11:47:27 UTC] PHP  25. sfExecutionFilter->handleView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:934
+[03-May-2013 11:47:27 UTC] PHP  26. sfExecutionFilter->executeView() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:966
+[03-May-2013 11:47:27 UTC] PHP  27. sfPHPView->render() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:979
+[03-May-2013 11:47:27 UTC] PHP  28. sfPHPView->renderFile() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3910
+[03-May-2013 11:47:27 UTC] PHP  29. require() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3851
+[03-May-2013 11:47:27 UTC] PHP  30. include_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\modules\recruitment\templates\viewCandidatesSuccess.php:55
+[03-May-2013 11:47:27 UTC] PHP  31. get_component() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:115
+[03-May-2013 11:47:27 UTC] PHP  32. sfPartialView->render() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\helper\PartialHelper.php:157
+[03-May-2013 11:47:27 UTC] PHP  33. sfPHPView->renderFile() C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\view\sfPartialView.class.php:124
+[03-May-2013 11:47:27 UTC] PHP  34. require() C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php:3851
+[03-May-2013 11:47:27 UTC] PHP  35. LabelCell->__toString() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\modules\core\templates\_ohrmList.php:298
+[03-May-2013 11:47:27 UTC] PHP  36. Cell->getValue() C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\component\LabelCell.php:10
+05/03/13 13:51:30,572 [5156] ERROR filter.ohrmAuthorizationFilter - Error getting is_secure value for action: exception 'DaoException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`orangehrm_3.0.1`.`ohrm_job_candidate`, CONSTRAINT `ohrm_job_candidate_ibfk_1` FOREIGN KEY (`added_person`) REFERENCES `hs_hr_employee` (`emp_number`) ON DELETE SET NULL)' in C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\lib\dao\CandidateDao.php:199
+Stack trace:
+#0 C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\lib\service\CandidateService.php(135): CandidateDao->saveCandidate(Object(JobCandidate))
+#1 C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\lib\form\ApplyVacancyForm.php(166): CandidateService->saveCandidate(Object(JobCandidate))
+#2 C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\lib\form\ApplyVacancyForm.php(130): ApplyVacancyForm->_getNewlySavedCandidateId(Object(JobCandidate))
+#3 C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmRecruitmentPlugin\modules\recruitmentApply\actions\applyVacancyAction.class.php(91): ApplyVacancyForm->save()
+#4 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(952): applyVacancyAction->execute(Object(sfWebRequest))
+#5 C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmExecutionFilter.php(36): sfExecutionFilter->executeAction(Object(applyVacancyAction))
+#6 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(947): orangehrmExecutionFilter->executeAction(Object(applyVacancyAction))
+#7 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(933): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(applyVacancyAction))
+#8 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(1031): sfExecutionFilter->execute(Object(sfFilterChain))
+#9 C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\filter\sfCommonFilter.class.php(29): sfFilterChain->execute()
+#10 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(1031): sfCommonFilter->execute(Object(sfFilterChain))
+#11 C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\filter\orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#12 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(1031): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#13 C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ModuleFilter.php(56): sfFilterChain->execute()
+#14 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(1031): ModuleFilter->execute(Object(sfFilterChain))
+#15 C:\xampp\htdocs\orangehrm-3.0.1\symfony\plugins\orangehrmCorePlugin\lib\authorization\filter\ohrmAuthorizationFilter.php(69): sfFilterChain->execute()
+#16 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(1031): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#17 C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#18 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(1031): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#19 C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\OrangeI18NFilter.php(58): sfFilterChain->execute()
+#20 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(1031): OrangeI18NFilter->execute(Object(sfFilterChain))
+#21 C:\xampp\htdocs\orangehrm-3.0.1\symfony\apps\orangehrm\lib\filter\ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#22 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(1031): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#23 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(995): sfFilterChain->execute()
+#24 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(1031): sfRenderingFilter->execute(Object(sfFilterChain))
+#25 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(665): sfFilterChain->execute()
+#26 C:\xampp\htdocs\orangehrm-3.0.1\symfony\cache\orangehrm\prod\config\config_core_compile.yml.php(2352): sfController->forward('recruitmentAppl...', 'applyVacancy')
+#27 C:\xampp\htdocs\orangehrm-3.0.1\symfony\lib\vendor\symfony\lib\util\sfContext.class.php(170): sfFrontWebController->dispatch()
+#28 C:\xampp\htdocs\orangehrm-3.0.1\symfony\web\index.php(22): sfContext->dispatch()
+#29 {main}
+05/05/13 20:45:23,464 [3200] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/05/13 20:45:45,036 [3200] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/05/13 20:46:55,481 [3200] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/05/13 21:15:35,284 [3200] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/05/13 21:16:15,311 [3200] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/05/13 21:33:08,844 [3200] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/05/13 21:33:16,432 [3200] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/05/13 21:34:00,665 [388] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/05/13 21:39:22,332 [3200] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/05/13 21:39:27,230 [3200] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
+05/06/13 01:37:37,644 [6624] INFO core.UserRoleManagerService - No logged in system user when creating UserRoleManager
