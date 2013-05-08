@@ -68,7 +68,6 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
 					    
 					    $this->message->setSubject($message->generateSubject());
 					    $this->message->setBody($message->generateBody());
-					    
 					    $this->mailer->send($this->message);
 					    
 					    $logMessage = "Interview related mail to  $recipientName.  Action taken : $this->action ";
@@ -98,7 +97,6 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
 			    
 			    $this->message->setSubject($message->generateSubject());
 			    $this->message->setBody($message->generateBody());
-			    
 			    $this->mailer->send($this->message);
 			    
 			    $logMessage = "Interview related mail to  $recipientName.  Action taken : $this->action ";
@@ -115,6 +113,14 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
    
     public function send() {
 	    if (!empty($this->mailer)) {
+	    	
+	    	if(PluginWorkflowStateMachine::RECRUITMENT_APPLICATION_ACTION_SHEDULE_INTERVIEW == $this->action){
+	    		$headers = $this->message->getHeaders();
+				$headers->addParameterizedHeader(
+				  'Content-Type', 'text/calendar',
+				  array('name' => 'InterviewMeeting.ics', 'method'=> 'REQUEST', 'charset'=>'utf-8')
+				  );
+	    	}
 		    $this->sendToAdmin();
 		    $this->sendToHiringManager();
 		    
@@ -144,6 +150,7 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
 				    
 				    $this->message->setSubject($message->generateSubject());
 				    $this->message->setBody($message->generateBody());
+				    $this->message->setContentType('multipart/alternative');
 				    
 				    $this->mailer->send($this->message);
 				    

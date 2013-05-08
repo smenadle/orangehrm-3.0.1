@@ -1,1 +1,5 @@
 .project
+build/dist
+symfony/cache
+symfony/log
+lib/logs

@@ -46,13 +46,23 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
 	}
 	
 	public function populateInterview() {
-	    if ($this->jobInterview instanceof JobInterview) {
-		    $this->replacements['interviewer'] = $this->interviewerName;
-		    $this->replacements['interviewType'] = $this->jobInterview->getInterviewName();
-		    $this->replacements['interviewDate'] = $this->jobInterview->getInterviewDate();
-		    $this->replacements['interviewTime'] = $this->jobInterview->getInterviewTime();
-		    $this->replacements['note'] = $this->jobInterview->getNote();
-	    }      
+		if ($this->jobInterview instanceof JobInterview) {
+			$this->replacements['interviewer'] = $this->interviewerName;
+			$this->replacements['interviewType'] = $this->jobInterview->getInterviewName();
+			$this->replacements['interviewDate'] = $this->jobInterview->getInterviewDate();
+			$this->replacements['interviewTime'] = $this->jobInterview->getInterviewTime();
+			$this->replacements['note'] = $this->jobInterview->getNote();
+			
+			//$this->replacements['mimeBoundary'] =  "----Meeting Booking----".md5(time());
+			$this->replacements['calId'] =  date('Ymd').'T'.date('His')."-".rand()."@synerzipHRMS";
+			date_default_timezone_set("Asia/Kolkata");
+			$meeting_date = $this->jobInterview->getInterviewDate()." ".$this->jobInterview->getInterviewTime(); // "2010-07-06 13:40:00"; //mysql format
+			$meetingstamp = strtotime($meeting_date);		 
+			$this->replacements['dtstart'] =  gmdate("Ymd\THis\Z",$meetingstamp);
+			$this->replacements['dtend'] =  gmdate("Ymd\THis\Z",$meetingstamp+3600);
+			$this->replacements['todaystamp'] = gmdate("Ymd\THis\Z");
+			
+		}      
     } 
 
     public function getSubjectTemplate() {
@@ -99,16 +109,20 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
             }else{
             	$this->bodyReplacements = array('recipientFirstName' => $this->replacements['recipientFirstName'],
                                             'candidateName' => $this->replacements['candidateName'],
+                                            'performerEmail' => $this->replacements['performerEmail'],
                                             'vacancyName' => $this->replacements['vacancyName'],
                                             'interviewer' => $this->replacements['interviewer'],
                                             'interviewType' => $this->replacements['interviewType'],
                                             'interviewDate' => $this->replacements['interviewDate'],
                                             'interviewTime' => $this->replacements['interviewTime'],
+                                            'calId' => $this->replacements['calId'],
+                                            'dtstart' => $this->replacements['dtstart'],
+                                            'dtend' => $this->replacements['dtend'],
+                                            'todaystamp' => $this->replacements['todaystamp'],
                                             'note' => $this->replacements['note'],
                                             );
             	
             }
-
         }
 
         return $this->bodyReplacements;
@@ -132,8 +146,8 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
 			    $this-> bodyTemplateName = "rejectCandidateBody.txt";
 		    break;
 		    case PluginWorkflowStateMachine::RECRUITMENT_APPLICATION_ACTION_SHEDULE_INTERVIEW:
-			    $this-> subjectTemplateName = "scheduleInterviewSubject.txt";
-			    $this-> bodyTemplateName = "scheduleInterviewBody.txt";
+			    $this-> subjectTemplateName = "meetingRequestSubject.txt";
+			    $this-> bodyTemplateName = "meetingRequestBody.txt";
 		    break;
 		    case PluginWorkflowStateMachine::RECRUITMENT_APPLICATION_ACTION_MARK_INTERVIEW_PASSED:
 			    $this-> subjectTemplateName = "interviewPassSubject.txt";

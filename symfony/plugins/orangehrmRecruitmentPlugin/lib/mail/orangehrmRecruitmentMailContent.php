@@ -123,6 +123,7 @@ abstract class orangehrmRecruitmentMailContent extends orangehrmMailContent {
         if ($this->performer instanceof Employee) {
             $this->replacements['performerFirstName'] = $this->performer->getFirstName();
             $this->replacements['performerFullName'] = $this->performer->getFirstAndLastNames();
+            $this->replacements['performerEmail'] = $this->performer->getEmpWorkEmail();
         }
 
         if ($this->recipient instanceof Employee) {
