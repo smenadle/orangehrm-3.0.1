@@ -226,6 +226,8 @@ class CandidateDao extends BaseDao {
      */
     public function updateCandidate(JobCandidate $candidate) {
         try {
+        	 $logger = Logger::getLogger('dao.CandidateDao');
+        	$logger->error('dao.CandidateDao: ' . $candidate->addedPerson);
             $q = Doctrine_Query:: create()->update('JobCandidate')
                     ->set('firstName', '?', $candidate->firstName)
                     ->set('lastName', '?', $candidate->lastName)
@@ -234,9 +236,14 @@ class CandidateDao extends BaseDao {
                     ->set('email', '?', $candidate->email)
                     ->set('middleName', '?', $candidate->middleName)
                     ->set('dateOfApplication', '?', $candidate->dateOfApplication)
-                    ->set('comment', '?', $candidate->comment)
-                    ->set('addedPerson', '?', $candidate->addedPerson)
-                    ->where('id = ?', $candidate->id);
+                    ->set('comment', '?', $candidate->comment);
+                    if(empty($candidate->addedPerson)){
+                    	$q->set('addedPerson', 'NULL');
+                    }else{
+                    	$q->set('addedPerson','?', $candidate->addedPerson);
+                    }
+                    
+                   $q->where('id = ?', $candidate->id);
 
             return $q->execute();
         } catch (Exception $e) {

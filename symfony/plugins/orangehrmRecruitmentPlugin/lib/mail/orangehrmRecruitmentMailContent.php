@@ -131,7 +131,8 @@ abstract class orangehrmRecruitmentMailContent extends orangehrmMailContent {
             $this->replacements['recipientFullName'] = $this->recipient->getFirstAndLastNames();
         }
 
-        $this->_populateCandidate();  
+        $this->_populateCandidate(); 
+        $this-> _populateHRMSiteAddress();
     }
 
     protected function _populateCandidate() {
@@ -140,6 +141,14 @@ abstract class orangehrmRecruitmentMailContent extends orangehrmMailContent {
 		    $this->replacements['vacancyName'] = $this->vacancy->getVacancyName();
 	    }      
     }    
+    
+    protected function _populateHRMSiteAddress(){
+	    $url = (empty($_SERVER['HTTPS']) OR $_SERVER['HTTPS'] === 'off') ? 'http://' : 'https://';
+	    $url .= $_SERVER['HTTP_HOST'];
+	   
+    	$this->replacements['synerzipHRMSite'] =  $url."/orangehrm";
+		$this->replacements['synerzipHRMVacancySite'] =  $url."/orangehrm/symfony/web/index.php/recruitmentApply/jobs.html";
+    }
     
     public function generateSubject() {
         return $this->replaceContent($this->getSubjectTemplate(), $this->getSubjectReplacements());

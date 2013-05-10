@@ -60,7 +60,9 @@ class AddCandidateMailContent extends orangehrmRecruitmentMailContent {
 
             $this->bodyReplacements = array('recipientFirstName' => $this->replacements['recipientFirstName'],
                                             'candidateName' => $this->replacements['candidateName'],
-                                            'vacancyName' => $this->replacements['vacancyName']
+                                            'vacancyName' => $this->replacements['vacancyName'],
+                                            'synerzipHRMSite' => $this->replacements['synerzipHRMSite'],
+                                            'synerzipHRMVacancySite' => $this->replacements['synerzipHRMVacancySite']
                                             );
 
         }

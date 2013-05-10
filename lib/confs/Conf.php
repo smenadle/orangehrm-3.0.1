@@ -13,12 +13,12 @@ class Conf {
 		$this->dbhost	= 'localhost';
 		$this->dbport 	= '3306';
 		if(defined('ENVIRNOMENT') && ENVIRNOMENT == 'test'){
-		$this->dbname    = 'test_orangehrm_3.0.1';		
+		$this->dbname    = 'test_orangehrm_mysql';		
 		}else {
-		$this->dbname    = 'orangehrm_3.0.1';
+		$this->dbname    = 'orangehrm_mysql';
 		}
-		$this->dbuser    = 'orangehrm-3.0.1';
-		$this->dbpass	= 'orangehrm-3.0.1';
+		$this->dbuser    = 'orangehrm';
+		$this->dbpass	= 'orangehrm';
 		$this->version = '3.0.1';
 
 		$this->emailConfiguration = dirname(__FILE__).'/mailConf.php';

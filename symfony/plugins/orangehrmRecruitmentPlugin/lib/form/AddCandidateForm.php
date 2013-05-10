@@ -179,7 +179,12 @@ class AddCandidateForm extends BaseForm {
         $this->widgetSchema->setNameFormat('addCandidate[%s]');
         $this->widgetSchema['appliedDate']->setAttribute();
         $this->setDefault('appliedDate', set_datepicker_date_format(date('Y-m-d')));
-
+        
+		$referralEmp = $this->getEmployeeService()->getEmployee(sfContext::getInstance()->getUser()->getEmployeeNumber());
+        $referralName = trim(trim($referralEmp['firstName'] . ' ' . $referralEmp['middleName'],' ') . ' ' . $referralEmp['lastName']);
+        $this->setDefault('referralId', sfContext::getInstance()->getUser()->getEmployeeNumber());
+        $this->setDefault('referralName', $referralName);
+        
         if ($this->candidateId != null) {
             $this->setDefaultValues($this->candidateId);
         }
@@ -200,12 +205,12 @@ class AddCandidateForm extends BaseForm {
         $candidateVacancyList = $candidate->getJobCandidateVacancy();
         $defaultVacancy = ($candidateVacancyList[0]->getVacancyId() == "") ? "" : $candidateVacancyList[0]->getVacancyId();
         $this->setDefault('vacancy', $defaultVacancy);
+        
         $referralID = $candidate->getAddedPerson();
-        $this->setDefault('referralId', $referralID);
         $employee = $this->getEmployeeService()->getEmployee($referralID);
         $referralName = trim(trim($employee['firstName'] . ' ' . $employee['middleName'],' ') . ' ' . $employee['lastName']);
+        $this->setDefault('referralId', $referralID);
         $this->setDefault('referralName', $referralName);
-        
         
     }
 
@@ -304,9 +309,11 @@ class AddCandidateForm extends BaseForm {
         }
         
         //Now send mail to HR admin and Hiring manager
-        $addCandidateMailer = new AddCandidateMailer($empNumber, $candidateId, $vacancy);
-	    $addCandidateMailer->send();
-      
+        if (empty($this->candidateId)) {
+	        $addCandidateMailer = new AddCandidateMailer($empNumber, $candidateId, $vacancy);
+	        $addCandidateMailer->send();
+        }
+       
         return $resultArray;
     }
 

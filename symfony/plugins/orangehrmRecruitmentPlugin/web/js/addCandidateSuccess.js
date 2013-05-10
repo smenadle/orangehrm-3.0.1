@@ -16,30 +16,7 @@ $(document).ready(function() {
         },
         matchContains:true
     }).result(function(event, item) {
-        //$("#addCandidate_referralName").valid();
         $("#addCandidate_referralId").val(item.id);
-    });
-    
-     if ($("#addCandidate_referralName").val() == '') {
-        $("#addCandidate_referralName").val(lang_typeForHints)
-        .addClass("inputFormatHint");
-    }
-    
-    
-     $("#addCandidate_referralName").one('focus', function() {
-
-        if ($(this).hasClass("inputFormatHint")) {
-            $(this).val("");
-            $(this).removeClass("inputFormatHint");
-        }
-    });
-    
-      $("#addCandidate_referralName").click(function() {
-
-        if ($(this).hasClass("inputFormatHint")) {
-            $(this).val("");
-            $(this).removeClass("inputFormatHint");
-        }
     });
     
     
@@ -104,6 +81,10 @@ $(document).ready(function() {
         } else {
             
             if(isValidForm()) {
+            
+            	if ($("#addCandidate_referralName").val() == '') {
+        			$("#addCandidate_referralId").val("");
+        		}
                 
                 $('#addCandidate_keyWords.inputFormatHint').val('');
                 getVacancy();
@@ -377,7 +358,6 @@ function isValidForm(){
             'addCandidate[comment]': {
                 maxlength:250
             },
-
             'addCandidate[appliedDate]' : {
                 valid_date: function() {
                     return {
@@ -425,7 +405,6 @@ function isValidForm(){
                 valid_date: lang_validDateMsg,
                 date_range_comp:lang_dateValidation
             }
-
         }
 
     });

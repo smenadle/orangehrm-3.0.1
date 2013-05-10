@@ -164,13 +164,16 @@ foreach ($jobVacancyList as $vacancy) {
                         <?php echo $form['appliedDate']->renderLabel(__('Date of Application'), array("class " => "appDate")); ?>
                         <?php echo $form['appliedDate']->render(array("class" => "formDateInput")); ?>
                     </li>
-		    <li>
-		    	<?php echo $form['referralName']->renderLabel(__('Referred By')); ?>
-	             <?php echo $form['referralName']->render(array("class" => "formInput", "style" => $textBoxWidth)); ?>
-
-		    
-		    </li>
-                    <li class="required new">
+				    <li> 
+				    	 <label class="hasTopFieldHelp"><?php echo $form['referralName']->renderLabel(__('Referred By')); ?></label>
+				    	 <ol class="fieldsInLine">
+                            <li>
+                                <div class="fieldDescription"><?php echo __('Assign Referral Employee/Consultant'); ?></div>
+                                <?php echo $form['referralName']->render(array("class" => "formInputText","maxlength" => 90)); ?>	
+                            </li>
+                        </ol>
+				    </li>
+				    <li class="required new">
                         <em>*</em> <?php echo __(CommonMessages::REQUIRED_FIELD); ?>
                     </li>
                 </ol>
@@ -239,6 +242,7 @@ foreach ($jobVacancyList as $vacancy) {
                                     var lang_emailRequired = '<?php echo __(ValidationMessages::REQUIRED); ?>';
                                     var lang_validDateMsg = '<?php echo __(ValidationMessages::DATE_FORMAT_INVALID, array('%format%' => str_replace('yy', 'yyyy', get_datepicker_date_format($sf_user->getDateFormat())))) ?>';
                                     var lang_validEmail = '<?php echo __(ValidationMessages::EMAIL_INVALID); ?>';
+                                    var lang_refferalRequired = '<?php echo __(ValidationMessages::REQUIRED); ?>';
                                     var list = <?php echo json_encode($allVacancylist); ?>;
                                     var allowedVacancylistWithClosedVacancies = <?php echo json_encode($allowedVacancylistWithClosedVacancies); ?>;
                                     var allowedVacancylist = <?php echo json_encode($allowedVacancylist); ?>;

@@ -7,5 +7,9 @@ You were sent this mail, as you are hiring manager for %vacancyName% or synerzip
 
 Thank you.
 Synerzip HRMS
+%synerzipHRMSite%
+
+Apply to vacancy URL:  %synerzipHRMVacancySite%
+
 
 Note: This is an automated notification. Please don't reply to this mail.
