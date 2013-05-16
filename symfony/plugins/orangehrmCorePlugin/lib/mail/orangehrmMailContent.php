@@ -29,6 +29,27 @@ abstract class orangehrmMailContent {
 
         return file_get_contents($path);
     }
+    
+    public function logResult($type = '', $logMessage = '') {
+		$logPath = ROOT_PATH . '/lib/logs/email_content.log';
+        if (file_exists($logPath) && !is_writable($logPath)) {
+            throw new Exception("Email Notifications : Log file is not writable");
+        }
+
+        $message = '========== Message Begins ==========';
+        $message .= "\r\n\n";
+        $message .= 'Time : '.date("F j, Y, g:i a");
+        $message .= "\r\n";
+        $message .= 'Message Type : '.$type;
+        $message .= "\r\n";
+        $message .= 'Message : '.$logMessage;
+        $message .= "\r\n\n";
+        $message .= '========== Message Ends ==========';
+        $message .= "\r\n\n";
+
+        file_put_contents($logPath, $message, FILE_APPEND);
+
+    }
 
 }
 

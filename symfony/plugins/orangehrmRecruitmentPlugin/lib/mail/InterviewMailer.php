@@ -52,6 +52,19 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
         }
        
     }
+    
+    public function send() {
+	    if (!empty($this->mailer)) {
+		    $this->sendToAdmin();
+		    $this->sendToHiringManager();
+		    if (!empty($this->selectedInterviewerArrayList)) {
+			    for ($i = 0; $i < count($this->selectedInterviewerArrayList); $i++) {
+				    $this->sendToInterviewer($this->selectedInterviewerArrayList[$i]);
+			    }
+		    }
+	    }
+    }
+    
 
     public function sendToAdmin() {
 	    $adminUsers = $this->getSystemUserService()->getAdminSystemUsers();
@@ -60,15 +73,17 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
 			    $recipient = $admin->getEmployee();
 			    if (!empty($recipient)) {
 				    try {
-					    $recipientName = $recipient->getEmpWorkEmail();
-					    $this->message->setFrom($this->getSystemFrom());
-					    $this->message->setTo($recipientName);
-					    
-					    $message = new InterviewMailContent($this->performer, $recipient, $this->candidate, $this->vacancy,$this->action,$this->jobInterview, $this->interviewerName);
-					    
-					    $this->message->setSubject($message->generateSubject());
-					    $this->message->setBody($message->generateBody());
-					    $this->mailer->send($this->message);
+				    	$message = new InterviewMailContent($this->performer, $recipient, $this->candidate, $this->vacancy,$this->action,$this->jobInterview, $this->interviewerName);
+					    if (!empty($this->selectedInterviewerArrayList)) {
+					    	 $message->scheduleMeeting();
+					    }else{
+						    $recipientName = $recipient->getEmpWorkEmail();
+						    $this->message->setFrom($this->getSystemFrom());
+						    $this->message->setTo($recipientName); 
+						    $this->message->setSubject($message->generateSubject());
+						    $this->message->setBody($message->generateBody());
+						    $this->mailer->send($this->message);
+					    }
 					    
 					    $logMessage = "Interview related mail to  $recipientName.  Action taken : $this->action ";
 					    $this->logResult('Success', $logMessage);
@@ -82,23 +97,22 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
 		    }
 	    }
     }
-
+   
     public function sendToHiringManager() {
 	    $recipient = $this->vacancy->getHiringManager();
-	    
 	    if (!empty($recipient)) {
 		    try {
-			    
-			    $recipientName = $recipient->getEmpWorkEmail();
-			    $this->message->setFrom($this->getSystemFrom());
-			    $this->message->setTo($recipientName);
-			    
-			    $message = new InterviewMailContent($this->performer, $recipient, $this->candidate, $this->vacancy,$this->action,$this->jobInterview, $this->interviewerName);
-			    
-			    $this->message->setSubject($message->generateSubject());
-			    $this->message->setBody($message->generateBody());
-			    $this->mailer->send($this->message);
-			    
+		    	$message = new InterviewMailContent($this->performer, $recipient, $this->candidate, $this->vacancy,$this->action,$this->jobInterview, $this->interviewerName);
+		    	if (!empty($this->selectedInterviewerArrayList)) {
+			    	$message->scheduleMeeting();
+		    	}else{
+			    	$recipientName = $recipient->getEmpWorkEmail();
+			    	$this->message->setFrom($this->getSystemFrom());
+			    	$this->message->setTo($recipientName);
+			    	$this->message->setSubject($message->generateSubject());
+			    	$this->message->setBody($message->generateBody());
+			    	$this->mailer->send($this->message);
+		    	}
 			    $logMessage = "Interview related mail to  $recipientName.  Action taken : $this->action ";
 			    $this->logResult('Success', $logMessage);
 		    } catch (Exception $e) {
@@ -111,49 +125,24 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
 	    
     }
    
-    public function send() {
-	    if (!empty($this->mailer)) {
-	    	
-	    	if(PluginWorkflowStateMachine::RECRUITMENT_APPLICATION_ACTION_SHEDULE_INTERVIEW == $this->action){
-	    		$headers = $this->message->getHeaders();
-				$headers->addParameterizedHeader(
-				  'Content-Type', 'text/calendar',
-				  array('name' => 'InterviewMeeting.ics', 'method'=> 'REQUEST', 'charset'=>'utf-8')
-				  );
-	    	}
-		    $this->sendToAdmin();
-		    $this->sendToHiringManager();
-		    
-		    if (!empty($this->selectedInterviewerArrayList)) {
-			    for ($i = 0; $i < count($this->selectedInterviewerArrayList); $i++) {
-				    $this->sendToInterviewer($this->selectedInterviewerArrayList[$i]);
-			    }
-		    }
-	    }
-    }
-    
+   
     
     public function sendToInterviewer($interviewerId) {
-	    
 	    if (!empty($this->mailer)) {
-		    
 		    $recipient = $this->getEmployeeService()->getEmployee($interviewerId);
-		    
 		    if (!empty($recipient)) {
 			    try {
-				    
-				    $recipientName = $recipient->getEmpWorkEmail();
-				    $this->message->setFrom($this->getSystemFrom());
-				    $this->message->setTo($recipientName);
-				    
-				    $message = new InterviewMailContent($this->performer, $recipient, $this->candidate, $this->vacancy,$this->action,$this->jobInterview, $this->interviewerName);
-				    
-				    $this->message->setSubject($message->generateSubject());
-				    $this->message->setBody($message->generateBody());
-				    $this->message->setContentType('multipart/alternative');
-				    
-				    $this->mailer->send($this->message);
-				    
+			    	$message = new InterviewMailContent($this->performer, $recipient, $this->candidate, $this->vacancy,$this->action,$this->jobInterview, $this->interviewerName);
+			    	if (!empty($this->selectedInterviewerArrayList)) {
+				    	$message->scheduleMeeting();
+			    	}else{
+				    	$recipientName = $recipient->getEmpWorkEmail();
+				    	$this->message->setFrom($this->getSystemFrom());
+				    	$this->message->setTo($recipientName);
+				    	$this->message->setSubject($message->generateSubject());
+				    	$this->message->setBody($message->generateBody());
+				    	$this->mailer->send($this->message);
+			    	}
 				    $logMessage = "Interview related mail to  $recipientName.  Action taken : $this->action ";
 				    $this->logResult('Success', $logMessage);
 			    } catch (Exception $e) {
@@ -165,5 +154,5 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
 		    }
 	    }
     }
-
+    
 }

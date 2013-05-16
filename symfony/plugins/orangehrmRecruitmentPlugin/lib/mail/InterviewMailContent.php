@@ -81,7 +81,6 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
             $this->subjectReplacements = array('candidateName' => $this->replacements['candidateName'],
                                                'vacancyName' => $this->replacements['vacancyName']
                                                );
-
         }
 
         return $this->subjectReplacements;
@@ -98,8 +97,6 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
     public function getBodyReplacements() {
 
         if (empty($this->bodyReplacements)) {
-
-            
             
             if(empty($this->jobInterview)){
             	$this->bodyReplacements = array('recipientFirstName' => $this->replacements['recipientFirstName'],
@@ -130,8 +127,99 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
         }
 
         return $this->bodyReplacements;
-        
     }
+    
+    function scheduleMeeting() {
+	    $from_name = $this->performer->getFirstName();
+	    $from_address = trim($this->performer->getEmpWorkEmail());
+	    $subject = "Interview Scheduled for ".$this->candidate->getFullName(); //Doubles as email subject and meeting subject in calendar
+	    $meeting_description = $this->jobInterview->getInterviewName().". ".$this->interviewerName ." will take the interview\n\n";
+	    $meeting_location = "Synerzip"; 
+	    
+	    //set interview time
+	    $dtstart= $this->replacements['dtstart'];
+	    $dtend= $this->replacements['dtend'];
+	    $todaystamp = gmdate("Ymd\THis\Z");
+	    
+	    
+	    //Create unique identifier
+	    $cal_uid = date('Ymd').'T'.date('His')."-".rand()."@synerzipHRMS";
+	    
+	    //Create Mime Boundry
+	    $mime_boundary = "----Meeting Booking----".md5(time());
+	    //$body = $this->generateBody();
+	    
+	    //Create Email Headers
+	    $headers = "From: ".$from_name." <".$this->performer->getEmpWorkEmail().">\n";
+	    $headers .= "Reply-To: ".$from_name." <".$this->performer->getEmpWorkEmail().">\n";
+	    
+	    $headers .= "MIME-Version: 1.0\n";
+	    $headers .= "Content-Type: multipart/alternative; boundary=\"$mime_boundary\"\n";
+	    $headers .= "Content-class: urn:content-classes:calendarmessage\n";
+	    
+	    //Create Email Body (HTML)
+	    $message = "--$mime_boundary\n";
+	    $message .= "Content-Type: text/html; charset=UTF-8\n";
+	    $message .= "<html>\n";
+	    $message .= "<body>\n";
+	    $message .= "<p>Hi ".$this->recipient->getFirstName().",</p>";
+	    $message .= "<p>Interview scheduled for <b>".$this->candidate->getFullName()."</b> shortlisted for <b>".$this->vacancy->getVacancyName()."</b> vacancy.</p>";   
+	    $message .= "<p>Please find below the interview details</p>";  
+	    $message .= "<p>Interviewer(s) Name : ".$this->interviewerName."<br>";    
+	    $message .= "Interview Type 	    : ".$this->jobInterview->getInterviewName()."<br>"; 
+	    $message .= "Date of Interview      : ".$this->jobInterview->getInterviewDate()."<br>"; 
+	    $message .= "Time of Interview      : ".$this->jobInterview->getInterviewTime()."<br>"; 
+	    $message .= "Note		            : ".$this->jobInterview->getNote()."</p>"; 
+	    $message .= "</body>\n";
+	    $message .= "</html>\n";
+	    $message .= "--$mime_boundary\n";
+	    
+	    //Create ICAL Content (Google rfc 2445 for details and examples of usage) 
+	    
+	    $cal[] = 'BEGIN:VCALENDAR';
+	    $cal[] = 'PRODID:-//Microsoft Corporation//Outlook 11.0 MIMEDIR//EN';
+	    $cal[] = 'VERSION:2.0';
+	    $cal[] = 'METHOD:REQUEST';
+	    $cal[] = 'BEGIN:VEVENT';
+	    $cal[] = 'ORGANIZER:MAILTO:hrmsadmin@synerzip.com';
+	    $cal[] = 'DTSTART:'.$dtstart.'';
+	    $cal[] = 'DTEND:'.$dtend.'';
+	    $cal[] = 'LOCATION:'.$meeting_location.'';
+	    $cal[] = 'TRANSP:OPAQUE';
+	    $cal[] = 'SEQUENCE:0';
+	    $cal[] = 'UID:'.$cal_uid.'';
+	    $cal[] = 'DTSTAMP:'.$todaystamp.'';
+	    $cal[] = 'DESCRIPTION:'.$meeting_description.'';
+	    $cal[] = 'SUMMARY:'.$subject.'';
+	    $cal[] = 'PRIORITY:5';
+	    $cal[] = 'CLASS:PUBLIC';
+	    $cal[] = 'BEGIN:VALARM';
+	    $cal[] = 'TRIGGER:-PT15M';
+	    $cal[] = 'ACTION:DISPLAY';
+	    $cal[] = 'DESCRIPTION:Reminder';
+	    $cal[] = 'END:VALARM';
+	    $cal[] = 'END:VEVENT';
+	    $cal[] = 'END:VCALENDAR';
+	    $cal_str = implode("\r\n",  $cal);
+	    
+	    $message .= "Content-Type: text/calendar;name=\"meeting.ics\";method=REQUEST;charset=utf-8\n";
+	    $message .= "Content-Transfer-Encoding: 8bit\n\n";
+	    $message .= $cal_str;        
+	    
+	    $recipientEmail = $this->recipient->getEmpWorkEmail();
+	    //SEND MAIL
+	    $mail_sent = @mail($recipientEmail, $subject, $message, $headers );
+	    
+	    if($mail_sent)     {
+		    $logMessage = "Meeting request mail sent to $recipientEmail";
+		    $this->logResult('Success', $logMessage);
+	    } else {
+		    $logMessage = "Couldn't send meeting request email to $recipientEmail";
+		    $this->logResult('Failure', $logMessage);
+	    }   
+	    
+    }
+    
    
     
     public function getTemplateNameByAction($action) {
@@ -151,7 +239,7 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
 		    break;
 		    case PluginWorkflowStateMachine::RECRUITMENT_APPLICATION_ACTION_SHEDULE_INTERVIEW:
 			    $this-> subjectTemplateName = "meetingRequestSubject.txt";
-			    $this-> bodyTemplateName = "meetingRequestBody.txt";
+			    $this-> bodyTemplateName = "scheduleInterviewBody.txt";
 		    break;
 		    case PluginWorkflowStateMachine::RECRUITMENT_APPLICATION_ACTION_MARK_INTERVIEW_PASSED:
 			    $this-> subjectTemplateName = "interviewPassSubject.txt";
@@ -180,5 +268,5 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
 	    }
 	    
     }
-    
+ 
 }
