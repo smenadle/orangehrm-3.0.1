@@ -11,6 +11,6 @@
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class PluginJobInterview extends BaseJobInterview {
-    const NO_OF_INTERVIEWS = 2;
+    const NO_OF_INTERVIEWS = 8;
     const TYPE = "INTERVIEW";
 }

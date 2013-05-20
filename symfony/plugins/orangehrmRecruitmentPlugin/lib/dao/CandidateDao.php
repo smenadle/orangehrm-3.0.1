@@ -226,8 +226,8 @@ class CandidateDao extends BaseDao {
      */
     public function updateCandidate(JobCandidate $candidate) {
         try {
-        	 $logger = Logger::getLogger('dao.CandidateDao');
-        	$logger->error('dao.CandidateDao: ' . $candidate->addedPerson);
+        	 //$logger = Logger::getLogger('dao.CandidateDao');
+        	//$logger->error('dao.CandidateDao: ' . $candidate->addedPerson);
             $q = Doctrine_Query:: create()->update('JobCandidate')
                     ->set('firstName', '?', $candidate->firstName)
                     ->set('lastName', '?', $candidate->lastName)
