@@ -60,6 +60,15 @@ class ApplyVacancyForm extends BaseForm {
         }
         return $this->recruitmentAttachmentService;
     }
+    
+    public function getAllCandidateList(){
+    	$candidateArray = array();
+    	$candidateList = $this->getCandidateService()->getAllCandidateList();
+    	foreach($candidateList as $candidate){
+    		$candidateArray[] = array('candidateId' => $candidate['id'], 'contactNumber' => $candidate['contactNumber'], 'email' => $candidate['email'] );
+    	}
+    	return $candidateArray;
+    }
 
     public function configure() {
 
@@ -275,6 +284,8 @@ class ApplyVacancyForm extends BaseForm {
     public function getResume() {
         return $this->attachment;
     }
+    
+    
 
 }
 

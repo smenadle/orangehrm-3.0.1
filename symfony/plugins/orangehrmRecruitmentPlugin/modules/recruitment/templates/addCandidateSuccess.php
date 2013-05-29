@@ -236,6 +236,8 @@ foreach ($jobVacancyList as $vacancy) {
                                     //<![CDATA[
                                     var employees = <?php echo str_replace('&#039;', "'", $form->getEmployeeListAsJson()) ?> ;
                    					var employeesArray = eval(employees);
+                   					var candidates = <?php echo json_encode($form->getAllCandidateList()); ?>;
+    								var candidateList =eval(candidates);
                                     var datepickerDateFormat = '<?php echo get_datepicker_date_format($sf_user->getDateFormat()); ?>';
                                     var lang_firstNameRequired = '<?php echo __(ValidationMessages::REQUIRED); ?>';
                                     var lang_lastNameRequired = '<?php echo __(ValidationMessages::REQUIRED); ?>';
@@ -273,5 +275,8 @@ foreach ($jobVacancyList as $vacancy) {
                                     var activeStatus = "<?php echo JobCandidate::ACTIVE; ?>";
                                     var candidateStatus = "<?php echo $candidateStatus; ?>";
                                     var invalidFile = "<?php echo $invalidFile; ?>";
-                                    var lang_typeForHints = '<?php echo __("Type for hints") . "..."; ?>'
+                                    var lang_typeForHints = '<?php echo __("Type for hints") . "..."; ?>';
+                                    var lang_emailExistmsg = '<?php echo __(ValidationMessages::ALREADY_EXISTS); ?>';
+                                    
+								    
 </script>

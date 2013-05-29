@@ -146,8 +146,8 @@ abstract class orangehrmRecruitmentMailContent extends orangehrmMailContent {
 	    $url = (empty($_SERVER['HTTPS']) OR $_SERVER['HTTPS'] === 'off') ? 'http://' : 'https://';
 	    $url .= $_SERVER['HTTP_HOST'];
 	   
-    	$this->replacements['synerzipHRMSite'] =  $url."/orangehrm";
-		$this->replacements['synerzipHRMVacancySite'] =  $url."/orangehrm/symfony/web/index.php/recruitmentApply/jobs.html";
+    	$this->replacements['synerzipHRMSite'] =  $url;
+		$this->replacements['synerzipHRMVacancySite'] =  $url."/symfony/web/index.php/recruitmentApply/jobs.html";
     }
     
     public function generateSubject() {

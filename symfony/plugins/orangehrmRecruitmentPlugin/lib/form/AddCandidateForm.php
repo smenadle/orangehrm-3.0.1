@@ -482,6 +482,15 @@ class AddCandidateForm extends BaseForm {
         $jsonString = json_encode($jsonArray);
         return $jsonString;
     }
-
+    
+    public function getAllCandidateList(){
+    	$candidateArray = array();
+    	$candidateList = $this->getCandidateService()->getAllCandidateList();
+    	foreach($candidateList as $candidate){
+    		$candidateArray[] = array('candidateId' => $candidate['id'], 'contactNumber' => $candidate['contactNumber'], 'email' => $candidate['email'] );
+    	}
+    	return $candidateArray;
+    }
+   
 }
 

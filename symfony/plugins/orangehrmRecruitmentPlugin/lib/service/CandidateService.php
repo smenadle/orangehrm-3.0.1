@@ -98,6 +98,12 @@ class CandidateService extends BaseService {
         return $this->getCandidateDao()->getCandidateNameList($allowedCandidateIdList, $status);
     }
     
+    /**
+     * Return all candidate lists
+     */
+    public function getAllCandidateList(){
+    	return $this->getCandidateDao()->getAllCandidateList();
+    }
 
     /**
      * Retrieve  candidate list

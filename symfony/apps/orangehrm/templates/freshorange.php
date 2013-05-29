@@ -12,7 +12,7 @@ $currentYear = date('Y');
         <div id="wrapper">
             
             <div id="branding">
-                <img src="<?php echo theme_path('images/logo.png')?>" width="283" height="56" alt="OrangeHRM"/>
+                <img src="<?php echo theme_path('images/Syn-Big-Logo.gif')?>" width="283" height="56" alt="OrangeHRM"/>
                
                 <a href="#" id="welcome" class="panelTrigger"><?php echo __("Welcome %username%", array("%username%" => $sf_user->getAttribute('auth.firstName'))); ?></a>
                 <div id="welcome-menu" class="panelContainer">

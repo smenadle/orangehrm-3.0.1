@@ -142,6 +142,8 @@
     var description	= '<?php $description; ?>';
     var vacancyId	= '<?php echo $vacancyId; ?>';
     var candidateId	= '<?php echo ($candidateId !="") ? $candidateId : 0;?>';
+    var candidates = <?php echo json_encode($form->getAllCandidateList()); ?>;
+    var candidateList = eval(candidates);
     var lang_firstNameRequired = '<?php echo __(ValidationMessages::REQUIRED); ?>';
     var lang_lastNameRequired = '<?php echo __(ValidationMessages::REQUIRED); ?>';
     var lang_emailRequired = '<?php echo __(ValidationMessages::REQUIRED); ?>';
@@ -154,5 +156,6 @@
     var linkForApplyVacancy = "<?php echo url_for('recruitmentApply/applyVacancy'); ?>";
     var linkForViewJobs = "<?php echo url_for('recruitmentApply/viewJobs'); ?>";
     var lang_back = "<?php echo __("Go to Job Page")?>";
+    var lang_emailExistmsg = '<?php echo __(ValidationMessages::ALREADY_EXISTS); ?>';
 	
 </script>

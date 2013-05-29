@@ -57,6 +57,74 @@ $(document).ready(function() {
 });
 
 function isValidForm(){
+	
+	$.validator.addMethod("uniqueEmail", function(value, element, params) {
+		var isUnique = true;
+		var currentCandidate;
+		var candidateCount = candidateList.length;
+		
+		for (var j=0; j < candidateCount; j++) {
+			if(candidateId == candidateList[j].candidateId){
+				currentCandidate = j;
+			}
+		}
+		
+		candidateEmail = $.trim($('#addCandidate_email').val()).toLowerCase();
+		for (var i=0; i < candidateCount; i++) {
+			if(candidateEmail != '') {
+				if(candidateList[i].email) {
+					email = candidateList[i].email.toLowerCase();
+					if (candidateEmail == email) {
+						isUnique = false
+						break;
+					}
+				}
+			}
+		}
+		
+		if(currentCandidate != null){
+			if(candidateList[currentCandidate].email != null) {
+				if(candidateEmail == candidateList[currentCandidate].email.toLowerCase()){
+					isUnique = true;
+				}
+			}
+		}
+		return isUnique;
+	});
+	
+	$.validator.addMethod("uniquePhone", function(value, element, params) {
+		var isUniquePhone = true;
+		var currentCandidate;
+		var candidateCount = candidateList.length;
+		for (var j=0; j < candidateCount; j++) {
+			if(candidateId == candidateList[j].candidateId){
+				currentCandidate = j;
+			}
+		}
+		
+		candidatePhone = $.trim($('#addCandidate_contactNo').val()).toLowerCase();
+		for (var i=0; i < candidateCount; i++) {
+			if(candidatePhone != '') {
+				if(candidateList[i].contactNumber) {
+					phone = candidateList[i].contactNumber.toLowerCase();
+					if (candidatePhone == phone) {
+						isUniquePhone = false
+						break;
+					}
+				}
+			}
+		}
+		
+		if(currentCandidate != null){
+			if(candidateList[currentCandidate].contactNumber != null) {
+				if(candidatePhone == candidateList[currentCandidate].contactNumber.toLowerCase()){
+					isUniquePhone = true;
+				}
+			}
+		}
+		
+		return isUniquePhone;
+	});
 
 	var validator = $("#frmAddCandidate").validate({
 
@@ -77,12 +145,14 @@ function isValidForm(){
 			'addCandidate[email]' : {
 				required:true,
 				email:true,
+				uniqueEmail: true,
 				maxlength:30
 
 			},
 
 			'addCandidate[contactNo]': {
 				phone: true,
+				uniquePhone: true,
 				maxlength:30
 			},
 
@@ -114,11 +184,13 @@ function isValidForm(){
             'addCandidate[email]' : {
 				required: lang_emailRequired,
 				email: lang_validEmail,
+				uniqueEmail: lang_emailExistmsg,
 				maxlength: lang_tooLargeInput
 			},
             
             'addCandidate[contactNo]': {
 				phone: lang_validPhoneNo,
+				uniquePhone: lang_emailExistmsg,
 				maxlength:lang_tooLargeInput
 			},
 

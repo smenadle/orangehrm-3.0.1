@@ -59,6 +59,19 @@ class CandidateDao extends BaseDao {
         }
     }
     
+    
+    public function getAllCandidateList(){
+	    try {
+		    $q = Doctrine_Query :: create()
+			    ->from('JobCandidate jc')
+				->addWhere('jc.status = ?', JobCandidate::ACTIVE);
+		    
+		    return $q->execute();
+	    } catch (Exception $e) {
+		    throw new DaoException($e->getMessage());
+	    }
+    }
+    
     /**
      * Return an array of candidate names
      * 

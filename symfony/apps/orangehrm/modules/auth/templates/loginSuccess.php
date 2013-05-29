@@ -138,7 +138,7 @@ $imagePath = theme_path("images/login");
 
 <div id="divLogin">
     <div id="divLogo">
-        <img src="<?php echo "{$imagePath}/logo.png"; ?>" />
+        <img src="<?php echo "{$imagePath}/syn-logo-withTagLine.png"; ?>" width="339" height="66" />
     </div>
 
     <form id="frmLogin" method="post" action="<?php echo url_for('auth/validateCredentials'); ?>">
