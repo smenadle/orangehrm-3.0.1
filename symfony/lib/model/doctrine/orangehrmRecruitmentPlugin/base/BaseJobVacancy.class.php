@@ -24,6 +24,7 @@
  * @method integer             getId()                   Returns the current record's "id" value
  * @method integer             getJobTitleCode()         Returns the current record's "jobTitleCode" value
  * @method integer             getHiringManagerId()      Returns the current record's "hiringManagerId" value
+ * @method integer			   getHiringManager1Id()	 Returns the current record's "hiringManager1Id" value
  * @method string              getName()                 Returns the current record's "name" value
  * @method text                getDescription()          Returns the current record's "description" value
  * @method integer             getNoOfPositions()        Returns the current record's "noOfPositions" value
@@ -39,6 +40,7 @@
  * @method JobVacancy          setId()                   Sets the current record's "id" value
  * @method JobVacancy          setJobTitleCode()         Sets the current record's "jobTitleCode" value
  * @method JobVacancy          setHiringManagerId()      Sets the current record's "hiringManagerId" value
+ * @method JobVacancy		   setHiringManager1Id()     Sets the current record's "hiringManager1Id" value
  * @method JobVacancy          setName()                 Sets the current record's "name" value
  * @method JobVacancy          setDescription()          Sets the current record's "description" value
  * @method JobVacancy          setNoOfPositions()        Sets the current record's "noOfPositions" value
@@ -75,6 +77,10 @@ abstract class BaseJobVacancy extends sfDoctrineRecord
              'type' => 'integer',
              'length' => 13,
              ));
+        $this->hasColumn('hiring_manager1_id as hiringManager1Id', 'integer', 13, array(
+	        'type' => 'integer',
+			'length' => 13,
+        	));
         $this->hasColumn('name', 'string', 100, array(
              'type' => 'string',
              'length' => 100,
@@ -111,7 +117,8 @@ abstract class BaseJobVacancy extends sfDoctrineRecord
         $this->hasOne('Employee', array(
              'local' => 'hiringManagerId',
              'foreign' => 'empNumber'));
-
+             
+      
         $this->hasMany('JobCandidateVacancy', array(
              'local' => 'id',
              'foreign' => 'vacancyId'));

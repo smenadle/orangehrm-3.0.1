@@ -36,6 +36,7 @@ use_javascript(plugin_web_path('orangehrmRecruitmentPlugin', 'js/addJobVacancySu
 
             <?php echo $form['_csrf_token']; ?>
             <?php echo $form["hiringManagerId"]->render(); ?>
+            <?php echo $form["hiringManager1Id"]->render(); ?>
             <fieldset>
                 <ol>
                     <li>
@@ -49,6 +50,10 @@ use_javascript(plugin_web_path('orangehrmRecruitmentPlugin', 'js/addJobVacancySu
                     <li>
                         <?php echo $form['hiringManager']->renderLabel(__('Hiring Manager') . ' <em>*</em>'); ?>
                         <?php echo $form['hiringManager']->render(array("maxlength" => 100)); ?>
+                    </li>
+                    <li>
+                        <?php echo $form['hiringManager1']->renderLabel(__('Hiring Manager (Secondary)')); ?>
+                        <?php echo $form['hiringManager1']->render(array("maxlength" => 100)); ?>
                     </li>
                     <li>
                         <?php echo $form['noOfPositions']->renderLabel(__('Number of Positions')); ?>

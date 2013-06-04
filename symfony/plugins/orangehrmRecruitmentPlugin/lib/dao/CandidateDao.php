@@ -120,6 +120,7 @@ class CandidateDao extends BaseDao {
                 $q->leftJoin('jc.JobCandidateVacancy jcv')
                         ->leftJoin('jcv.JobVacancy jv')
                         ->where('jv.hiringManagerId = ?', $empNumber)
+                        ->orwhere('jv.hiringManager1Id = ?', $empNumber)
                         ->orWhere('jc.id NOT IN (SELECT ojcv.candidateId FROM JobCandidateVacancy ojcv) AND jc.addedPerson = ?', $empNumber);
             }
             if ($role == InterviewerUserRoleDecorator::INTERVIEWER) {
@@ -608,6 +609,10 @@ class CandidateDao extends BaseDao {
 
 
         $whereClause .= ( count($whereFilters) > 0) ? (' AND ' . implode('AND ', $whereFilters)) : '';
+        
+//        if($paramObject->getHiringManagerId() != null){
+//        	 $whereClause .= " AND jv.hiring_manager_id = ".$paramObject->getHiringManagerId()." OR jv.hiring_manager1_id = ".$paramObject->getHiringManagerId();
+//        }
         if ($empNumber != null) {
             $whereClause .= " OR jc.id NOT IN (SELECT ojcv.candidate_id FROM ohrm_job_candidate_vacancy ojcv) " ;
         }

@@ -79,7 +79,7 @@ textarea {
 	text-decoration:underline;
 }
 #help {
-	color:#f28c38;
+	color:#595959;
 	background: url(../images/help-down.png) no-repeat center right;
 	padding:2px 15px 1px 1px;
 	text-decoration:none;
@@ -186,7 +186,7 @@ textarea {
     position:absolute;
     left:-9999px;
     height:36px;
-    background:url(../images/sub-nav.png) left bottom repeat-x;
+    background:#595959;
     opacity:0;
     padding:4px 0 0 25px;
     width:100%;
@@ -235,7 +235,7 @@ textarea {
 .menu > ul > li > ul > li > ul {
 	position:absolute;
 	left:-9999px;
-	background:#555657;
+	background:#595959;
 	padding:10px;
 	-moz-border-radius-topright: 3px;
 	-webkit-border-top-right-radius: 3px;
@@ -271,10 +271,10 @@ textarea {
 	opacity:1;
 }
 .menu > ul > li > ul > li:hover > a {
-	color:#fff; background:#555657;
+	color:#fff; background:#595959;
 }
 .menu > ul > li > ul > li:hover > a.arrow {
-	background:#555657 url(../images/sub-nav-arrow-s.png) no-repeat 92% 48%;
+	background:#595959 url(../images/sub-nav-arrow-s.png) no-repeat 92% 48%;
 }
 .menu > ul > li > ul > li:hover > ul {
 	left:0px;
@@ -289,44 +289,44 @@ textarea {
 	color:#fff;
 }
 .menu > ul > li.current > a {
-	background:#f28c38;
+	background:#595959;
 	color:#fff;
 }
 .menu > ul > li.current > a b {
-	background:#f28c38;
+	background:#595959;
 }
 .menu > ul > li.current > ul {
 	left:0;
 	opacity:1;
 }
 .menu > ul:hover > li.current > a {
-	background:#f28c38;
+	background:#595959;
 }
 .menu > ul:hover > li.current > a b {
-	background:#f28c38;
+	background:#595959;
 }
 .menu > ul:hover > li.current > ul {
 	left:-9999px;
 }
 .menu > ul:hover > li.current:hover > a {
-	background:#f28c38;
+	background:#595959;
 }
 .menu > ul:hover > li.current:hover > a b {
-	background:#f28c38;
+	background:#595959;
 }
 .menu > ul:hover > li.current:hover > ul {
 	left:0;
 	opacity:1;
 }
 .menu > ul > li > ul > li.selected > a {
-	background:#555657;
+	background:#595959;
 	color:#fff;
 }
 .menu > ul > li > ul > li.selected > a.arrow {
-	background:#555657 url(../images/sub-nav-arrow-s.png) no-repeat 92% 48%;
+	background:#595959 url(../images/sub-nav-arrow-s.png) no-repeat 92% 48%;
 }
 .menu > ul > li > ul > li.current > a b {
-	background:#555657;
+	background:#595959;
 }
 .menu > ul > li > ul > li.current > ul {
 	left:0;
@@ -687,7 +687,7 @@ form p {
     padding-top: 5px;
 }
 input[type="button"], input[type="submit"], input[type="reset"] {
-	background:#33ac3f;
+	background:#e8c413;
 	color:#fff;
 	font-size:15px;
 	padding:8px 20px;
@@ -762,12 +762,12 @@ form ol li ol.fieldsInLine li span.validation-error {
  */
 input[type=button].hover,
 input[type=submit].hover {
-    background-color: #086912;
+    background-color: #d6ad06;
 }
 
 input[type=button],
 input[type=submit] {
-    background-color: #33ac3f;
+    background-color: #e8c413;
 }
 
 input[type=button].cancel.hover,
@@ -887,7 +887,7 @@ form ol li input.time_range_duration {
 	background:#eaeaea;
 }
 .paging a.current {
-	background:#33ac3f;
+	background:#e8c413;
 	color:#fff;
 }
 .paging li.first a, .paging li.previous a, .paging li.next a, .paging li.last a {
@@ -925,7 +925,7 @@ table.table {
     border-collapse:collapse;    
 }
 table.table th {
-	background:#f28c38;
+	background:#595959;
 	color:#fff;
 	padding:7px;
 	border:1px solid #fff;
@@ -966,7 +966,7 @@ table tbody tr.odd td {
 	background-color:#eaeaea;
 }
 table tbody tr.total td {
-	background-color:#555657;
+	background-color:#595959;
 	color:#fff;
 }
 table tbody tr td strong {
@@ -994,7 +994,7 @@ table.table td left {
 }
 
 table tfoot tr.total td {
-	background-color:#555657;
+	background-color:#595959;
 	color:#fff;
 }
 table tfoot tr td strong {
@@ -1301,7 +1301,7 @@ ul.error_list li { /* For Symfony form errors. Used in PIM Define Reports */
 
 .modal-header {
   padding: 12px 15px;
-  background-color:#f28c38;
+  background-color:#595959;
   -moz-border-radius-topleft: 4px;
 -webkit-border-top-left-radius: 4px;
  border-top-left-radius: 4px;
@@ -1546,7 +1546,7 @@ div#timesheet table.table tbody tr td.comments, div#edit-timesheet table.table t
 #sidebar #sidenav {
 	margin:19px 0 0 0;
 	padding:7px;
-	background: #f28c38 url(../images/sidebar-nav-bg.png) repeat-y top right;
+	background: #595959;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -1561,18 +1561,18 @@ div#timesheet table.table tbody tr td.comments, div#edit-timesheet table.table t
 	width:174px;
 	text-decoration:none;
 	margin-bottom:5px;
-	border-bottom:1px solid #f19a52;
+	border-bottom:1px solid #d6ad06;
 }
 #sidebar #sidenav a:hover {
-	background-color:#ce6d1d;
+	background-color:#d6ad06;
 }
 
 #sidebar #sidenav a.disabled {
-    background-color: #CE6D1D;
+    background-color: #d6ad06;
 }
 
 #sidebar #sidenav .selected a {
-	background-color:#555657;
+	background-color:#d6ad06;
 	color:#fff;
 	border-bottom:none;
 }

@@ -4,6 +4,7 @@ $(document).ready(function() {
         $("#addJobVacancy_jobTitle").attr('disabled', 'disabled');
         $("#addJobVacancy_name").attr('disabled', 'disabled');
         $("#addJobVacancy_hiringManager").attr('disabled', 'disabled');
+        $("#addJobVacancy_hiringManager1").attr('disabled', 'disabled');
         $("#addJobVacancy_noOfPositions").attr('disabled', 'disabled');
         $("#addJobVacancy_description").attr('disabled', 'disabled');
         $("#addJobVacancy_status").attr('disabled', 'disabled');
@@ -11,17 +12,30 @@ $(document).ready(function() {
     }
     //Auto complete
     $("#addJobVacancy_hiringManager").autocomplete(hiringManagers, {
-        formatItem: function(item) {
-            return $('<div/>').text(item.name).html();
-        },
-        formatResult: function(item) {
-            return item.name
-        },  
-        matchContains:true
+    	formatItem: function(item) {
+    		return $('<div/>').text(item.name).html();
+    	},
+    	formatResult: function(item) {
+    		return item.name
+    	},  
+    	matchContains:true
     }).result(function(event, item) {
-        //$("#candidateSearch_selectedCandidate").val(item.id);
-        //$("label.error").hide();
-        });
+    	//$("#candidateSearch_selectedCandidate").val(item.id);
+    	//$("label.error").hide();
+    });
+    
+    $("#addJobVacancy_hiringManager1").autocomplete(hiringManagers, {
+    	formatItem: function(item) {
+    		return $('<div/>').text(item.name).html();
+    	},
+    	formatResult: function(item) {
+    		return item.name
+    	},  
+    	matchContains:true
+    }).result(function(event, item) {
+    	//$("#candidateSearch_selectedCandidate").val(item.id);
+    	//$("label.error").hide();
+    });
 
     $('#btnSave').click(function() {
 
@@ -32,6 +46,7 @@ $(document).ready(function() {
             $("#addJobVacancy_jobTitle").removeAttr("disabled");
             $("#addJobVacancy_name").removeAttr("disabled");
             $("#addJobVacancy_hiringManager").removeAttr("disabled");
+            $("#addJobVacancy_hiringManager1").removeAttr("disabled");
             $("#addJobVacancy_noOfPositions").removeAttr("disabled");
             $("#addJobVacancy_description").removeAttr("disabled");
             $("#addJobVacancy_status").removeAttr("disabled");
@@ -65,8 +80,21 @@ $(document).ready(function() {
         $("#addJobVacancy_hiringManager").val(lang_typeForHints)
         .addClass("inputFormatHint");
     }
+    
+    if ($("#addJobVacancy_hiringManager1").val() == '') {
+        $("#addJobVacancy_hiringManager1").val(lang_typeForHints)
+        .addClass("inputFormatHint");
+    }
 
     $("#addJobVacancy_hiringManager").one('focus', function() {
+
+        if ($(this).hasClass("inputFormatHint")) {
+            $(this).val("");
+            $(this).removeClass("inputFormatHint");
+        }
+    });
+    
+    $("#addJobVacancy_hiringManager1").one('focus', function() {
 
         if ($(this).hasClass("inputFormatHint")) {
             $(this).val("");
@@ -90,6 +118,25 @@ function isValidForm(){
                 break;
             }
         }
+        return temp;
+    });
+      
+    $.validator.addMethod("hiringManagerName1Validation", function(value, element, params) {
+        var temp = false;
+        var hmCount = hiringManagersArray.length;
+		var hmName1 = $.trim($('#addJobVacancy_hiringManager1').val()).toLowerCase();
+		if(hmName1 != lang_typeForHints.toLowerCase() && hmName1 != ''){
+			for (var i=0; i < hmCount; i++) {
+				arrayName = hiringManagersArray[i].name.toLowerCase();
+				if (hmName1 == arrayName) {
+					$('#addJobVacancy_hiringManager1Id').val(hiringManagersArray[i].id);
+					temp = true
+					break;
+				}
+			}
+		}else{
+			temp = true;
+		}
         return temp;
     });
 
@@ -146,6 +193,9 @@ function isValidForm(){
             'addJobVacancy[hiringManager]' : {
                 hiringManagerNameValidation: true
             },
+            'addJobVacancy[hiringManager1]' : {
+                hiringManagerName1Validation: true
+            },
             'addJobVacancy[description]' : {
                 maxlength:40000
             }
@@ -166,6 +216,9 @@ function isValidForm(){
             },
             'addJobVacancy[hiringManager]' : {
                 hiringManagerNameValidation:lang_enterAValidEmployeeName
+            },
+            'addJobVacancy[hiringManager1]' : {
+                hiringManagerName1Validation:lang_enterAValidEmployeeName
             },
             'addJobVacancy[description]' : {
                 maxlength: lang_descriptionLength

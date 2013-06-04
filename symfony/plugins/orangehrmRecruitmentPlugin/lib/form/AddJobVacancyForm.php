@@ -23,6 +23,7 @@ class AddJobVacancyForm extends BaseForm {
     private $vacancyService;
     private $vacancyId;
     private $jobTitleService;
+    private $employeeService;
 
     public function getJobTitleService() {
         if (is_null($this->jobTitleService)) {
@@ -42,6 +43,14 @@ class AddJobVacancyForm extends BaseForm {
             $this->vacancyService->setVacancyDao(new VacancyDao());
         }
         return $this->vacancyService;
+    }
+    
+    public function getEmployeeService(){
+    	if (is_null($this->employeeService)) {
+            $this->employeeService = new employeeService();
+            $this->employeeService->setEmployeeDao(new EmployeeDao());
+        }
+        return $this->employeeService;
     }
 
     /**
@@ -70,6 +79,8 @@ class AddJobVacancyForm extends BaseForm {
             'name' => new sfWidgetFormInputText(),
             'hiringManager' => new sfWidgetFormInputText(),
             'hiringManagerId' => new sfWidgetFormInputHidden(),
+            'hiringManager1' => new sfWidgetFormInputText(),
+            'hiringManager1Id' => new sfWidgetFormInputHidden(),
             'noOfPositions' => new sfWidgetFormInputText(),
             'description' => new sfWidgetFormTextArea(),
             'status' => new sfWidgetFormInputCheckbox(array(), array('value' => 'on')),
@@ -84,6 +95,8 @@ class AddJobVacancyForm extends BaseForm {
             'name' => new sfValidatorString(array('required' => true)),
             'hiringManager' => new sfValidatorString(array('required' => true)),
             'hiringManagerId' => new sfValidatorInteger(array('required' => true, 'min' => 0)),
+            'hiringManager1' => new sfValidatorString(array('required' => false)),
+            'hiringManager1Id' => new sfValidatorInteger(array('required' => false, 'min' => 0)),
             'noOfPositions' => new sfValidatorInteger(array('required' => false, 'min' => 0)),
             'description' => new sfValidatorString(array('required' => false, 'max_length' => 41000)),
             'status' => new sfValidatorString(array('required' => false)),
@@ -94,6 +107,7 @@ class AddJobVacancyForm extends BaseForm {
             $this->setDefault('jobTitle', $vacancy->getJobTitleCode());
             $this->setDefault('name', $vacancy->getName());
             $this->setDefault('hiringManager', $vacancy->getHiringManagerFullName());
+            $this->setDefault('hiringManager1',$this->getSecondHiringManagerFullName($vacancy->getHiringManager1Id()));
             $this->setDefault('noOfPositions', $vacancy->getNoOfPositions());
             $this->setDefault('description', $vacancy->getDescription());
             if ($vacancy->getStatus() == JobVacancy::ACTIVE) {
@@ -124,6 +138,7 @@ class AddJobVacancyForm extends BaseForm {
         $jobVacancy->jobTitleCode = $this->getValue('jobTitle');
         $jobVacancy->name = $this->getValue('name');
         $jobVacancy->hiringManagerId = $this->getValue('hiringManagerId');
+        $jobVacancy->hiringManager1Id = $this->getValue('hiringManager1Id');
         $jobVacancy->noOfPositions = $this->getValue('noOfPositions');
         $jobVacancy->description = $this->getValue('description');
         $jobVacancy->status = JobVacancy::CLOSED;
@@ -143,6 +158,15 @@ class AddJobVacancyForm extends BaseForm {
         return $jobVacancy->getId();
     }
 
+	public function getSecondHiringManagerFullName($empNumber){
+		$employee = $this->getEmployeeService()->getEmployee($empNumber);
+		if (!empty($employee)) {
+			return $employee->getFullName();
+		}else{
+			return;
+		}
+	}
+	
     /**
      * Returns Vacancy List
      * @return array
@@ -168,7 +192,8 @@ class AddJobVacancyForm extends BaseForm {
         }
         return $list;
     }
-
+    
+    
     /**
      *
      * @return <type>
@@ -176,11 +201,8 @@ class AddJobVacancyForm extends BaseForm {
     public function getHiringManagerListAsJson() {
 
         $jsonArray = array();
-        $employeeService = new EmployeeService();
-        $employeeService->setEmployeeDao(new EmployeeDao());
-
         $properties = array("empNumber","firstName", "middleName", "lastName", "termination_id");
-        $employeeList = $employeeService->getEmployeePropertyList($properties, 'lastName', 'ASC', true);
+        $employeeList = $this->getEmployeeService()->getEmployeePropertyList($properties, 'lastName', 'ASC', true);
 
         foreach ($employeeList as $employee) {
             $empNumber = $employee['empNumber'];

@@ -95,6 +95,7 @@ class VacancyDao extends BaseDao {
                             ->from('JobVacancy jv');
             if ($role == HiringManagerUserRoleDecorator::HIRING_MANAGER) {
                 $q->where('jv.hiringManagerId = ?', $empNumber);
+                $q->orwhere('jv.hiringManager1Id = ?', $empNumber);
             }
             if ($role == InterviewerUserRoleDecorator::INTERVIEWER) {
                 $q->leftJoin('jv.JobCandidateVacancy jcv')
@@ -237,6 +238,7 @@ class VacancyDao extends BaseDao {
         $jobTitle = $srchParams['jobTitle'];
         $jobVacancy = $srchParams['jobVacancy'];
         $hiringManager = $srchParams['hiringManager'];
+        $hiringManager1 = $srchParams['hiringManager1'];
         $status = $srchParams['status'];
         $orderField = (!empty($srchParams['orderField'])) ? $srchParams['orderField'] : 'v.name';
         $orderBy = (!empty($srchParams['orderBy'])) ? $srchParams['orderBy'] : 'ASC';
@@ -264,6 +266,7 @@ class VacancyDao extends BaseDao {
         if (!empty($hiringManager)) {
             $q->addwhere('v.hiringManagerId = ?', $hiringManager);
         }
+        
         if ($status != "") {
             $q->addwhere('v.status = ?', $status);
         }
@@ -375,6 +378,18 @@ class VacancyDao extends BaseDao {
             $query = Doctrine_Query::create()
                     ->from('JobInterview ji')
                     ->where('ji.JobInterviewInterviewer.interviewerId = ?', $empNumber);
+            return $query->execute();
+        } catch (Exception $e) {
+            throw new DaoException($e->getMessage());
+        }
+    }
+    
+    public function searchJobVacancies($empNumber){
+    	 try {
+            $query = Doctrine_Query::create()
+                    ->from('JobVacancy jv')
+                    ->where('jv.hiringManagerId = ?', $empNumber)
+                    ->orwhere ('jv.hiringManager1Id = ?', $empNumber);
             return $query->execute();
         } catch (Exception $e) {
             throw new DaoException($e->getMessage());
