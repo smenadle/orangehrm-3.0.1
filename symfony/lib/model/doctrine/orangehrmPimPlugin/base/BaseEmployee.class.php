@@ -9,6 +9,9 @@
  * @property string $lastName
  * @property string $firstName
  * @property string $middleName
+ * @property string $fatherName
+ * @property string $husbandName
+ * @property string $bloodGroup
  * @property string $nickName
  * @property integer $smoker
  * @property string $ssn
@@ -21,6 +24,7 @@
  * @property string $city
  * @property string $country
  * @property string $province
+ * @property string $permanentAddress
  * @property string $employeeId
  * @property string $ethnic_race_code
  * @property date $emp_birthday
@@ -37,9 +41,17 @@
  * @property string $emp_mobile
  * @property string $emp_work_telephone
  * @property string $emp_work_email
+ * @property string $emp_personal_email
+ * @property string $emp_skype_id
+ * @property string $emp_phone_accesscode
  * @property string $sal_grd_code
  * @property date $joined_date
  * @property string $emp_oth_email
+ * @property decimal $total_experience
+ * @property decimal $current_experience
+ * @property integer $notice_period
+ * @property String $project
+ * @property String $referred_by
  * @property integer $termination_id
  * @property string $custom1
  * @property string $custom2
@@ -98,6 +110,9 @@
  * @method string                    getLastName()                  Returns the current record's "lastName" value
  * @method string                    getFirstName()                 Returns the current record's "firstName" value
  * @method string                    getMiddleName()                Returns the current record's "middleName" value
+ * @method string                    getFatherName()                Returns the current record's "fatherName" value
+ * @method string                    getHusbandName()               Returns the current record's "husbandName" value
+ * @method string                    getBloodGroup()                Returns the current record's "bloodGroup" value
  * @method string                    getNickName()                  Returns the current record's "nickName" value
  * @method integer                   getSmoker()                    Returns the current record's "smoker" value
  * @method string                    getSsn()                       Returns the current record's "ssn" value
@@ -110,6 +125,7 @@
  * @method string                    getCity()                      Returns the current record's "city" value
  * @method string                    getCountry()                   Returns the current record's "country" value
  * @method string                    getProvince()                  Returns the current record's "province" value
+ * @method string					 getPermanentAddress()			Returns the current record's "permanentAddress" value
  * @method string                    getEmployeeId()                Returns the current record's "employeeId" value
  * @method string                    getEthnicRaceCode()            Returns the current record's "ethnic_race_code" value
  * @method date                      getEmpBirthday()               Returns the current record's "emp_birthday" value
@@ -129,6 +145,14 @@
  * @method string                    getSalGrdCode()                Returns the current record's "sal_grd_code" value
  * @method date                      getJoinedDate()                Returns the current record's "joined_date" value
  * @method string                    getEmpOthEmail()               Returns the current record's "emp_oth_email" value
+ * @method string                 	 getEmpPersonalEmail()          Returns the current record's "emp_personal_email" value
+ * @method string                  	 getEmpSkypeId()                Returns the current record's "emp_skype_id" value
+ * @method string                  	 getEmpPhoneAccesscode()        Returns the current record's "emp_phone_accesscode" value
+ * @method decimal                   getTotalExperience()       	Returns the current record's "total_experience" value
+ * @method decimal                   getCurrentExperience()       	Returns the current record's "current_experience" value
+ * @method integer                   getNoticePeriod()		       	Returns the current record's "notice_period" value
+ * @method string                    getProject()      			 	Returns the current record's "project" value
+ * @method string                    getRefferedBy()		       	Returns the current record's "referred_by" value
  * @method integer                   getTerminationId()             Returns the current record's "termination_id" value
  * @method string                    getCustom1()                   Returns the current record's "custom1" value
  * @method string                    getCustom2()                   Returns the current record's "custom2" value
@@ -186,6 +210,9 @@
  * @method Employee                  setLastName()                  Sets the current record's "lastName" value
  * @method Employee                  setFirstName()                 Sets the current record's "firstName" value
  * @method Employee                  setMiddleName()                Sets the current record's "middleName" value
+ * @method Employee                  setFatherName()                Sets the current record's "fatherName" value
+ * @method Employee                  setHusbandName()               Sets the current record's "husbandName" value
+ * @method Employee                  setBloodGroup()                Sets the current record's "bloodGroup" value
  * @method Employee                  setNickName()                  Sets the current record's "nickName" value
  * @method Employee                  setSmoker()                    Sets the current record's "smoker" value
  * @method Employee                  setSsn()                       Sets the current record's "ssn" value
@@ -198,6 +225,7 @@
  * @method Employee                  setCity()                      Sets the current record's "city" value
  * @method Employee                  setCountry()                   Sets the current record's "country" value
  * @method Employee                  setProvince()                  Sets the current record's "province" value
+ * @method Employee					 setPermanentAddress()			Sets the current record's "permanentAddress" value
  * @method Employee                  setEmployeeId()                Sets the current record's "employeeId" value
  * @method Employee                  setEthnicRaceCode()            Sets the current record's "ethnic_race_code" value
  * @method Employee                  setEmpBirthday()               Sets the current record's "emp_birthday" value
@@ -217,6 +245,14 @@
  * @method Employee                  setSalGrdCode()                Sets the current record's "sal_grd_code" value
  * @method Employee                  setJoinedDate()                Sets the current record's "joined_date" value
  * @method Employee                  setEmpOthEmail()               Sets the current record's "emp_oth_email" value
+ * @method Employee                  setEmpPersonalEmail()          Sets the current record's "emp_personal_email" value
+ * @method Employee                  setEmpSkypeId()                Sets the current record's "emp_skype_id" value
+ * @method Employee                  setEmpPhoneAccesscode()        Sets the current record's "emp_phone_accesscode" value
+ * @method Employee                  setTotalExperience()       	Sets the current record's "total_experience" value
+ * @method Employee                  setCurrentExperience()       	Sets the current record's "current_experience" value
+ * @method Employee                  setNoticePeriod()		       	Sets the current record's "notice_period" value
+ * @method Employee                  setProject()      			 	Sets the current record's "project" value
+ * @method Employee                  setRefferedBy()		       	Sets the current record's "referred_by" value
  * @method Employee                  setTerminationId()             Sets the current record's "termination_id" value
  * @method Employee                  setCustom1()                   Sets the current record's "custom1" value
  * @method Employee                  setCustom2()                   Sets the current record's "custom2" value
@@ -304,6 +340,20 @@ abstract class BaseEmployee extends sfDoctrineRecord
              'notnull' => true,
              'length' => 100,
              ));
+        $this->hasColumn('emp_father_name as fatherName', 'string', 100, array(
+             'type' => 'string',
+             'default' => '',
+             'length' => 100,
+             ));
+        $this->hasColumn('emp_husband_name as husbandName', 'string', 100, array(
+             'type' => 'string',
+             'default' => '',
+             'length' => 100,
+             ));
+        $this->hasColumn('emp_bldgp as bloodGroup', 'string', 20, array(
+             'type' => 'string',
+             'length' => 20,
+             ));
         $this->hasColumn('emp_nick_name as nickName', 'string', 100, array(
              'type' => 'string',
              'default' => '',
@@ -364,6 +414,11 @@ abstract class BaseEmployee extends sfDoctrineRecord
              'default' => '',
              'length' => 100,
              ));
+        $this->hasColumn('emp_permanent_address as permanentAddress', 'string', 100, array(
+             'type' => 'string',
+             'default' => '',
+             'length' => 250,
+             ));
         $this->hasColumn('employee_id as employeeId', 'string', 50, array(
              'type' => 'string',
              'default' => '',
@@ -423,6 +478,10 @@ abstract class BaseEmployee extends sfDoctrineRecord
              'type' => 'string',
              'length' => 50,
              ));
+         $this->hasColumn('emp_phone_accesscode', 'string', 50, array(
+             'type' => 'string',
+             'length' => 50,
+             ));
         $this->hasColumn('emp_work_email', 'string', 50, array(
              'type' => 'string',
              'length' => 50,
@@ -439,10 +498,40 @@ abstract class BaseEmployee extends sfDoctrineRecord
              'type' => 'string',
              'length' => 50,
              ));
+        $this->hasColumn('emp_personal_email', 'string', 50, array(
+             'type' => 'string',
+             'length' => 50,
+             ));
+        $this->hasColumn('emp_skype_id', 'string', 50, array(
+             'type' => 'string',
+             'length' => 50,
+             ));
         $this->hasColumn('termination_id', 'integer', 4, array(
              'type' => 'integer',
              'length' => 4,
              ));
+         $this->hasColumn('total_experience', 'decimal', 11, array(
+             'type' => 'decimal',
+             'scale' => false,
+             'length' => 11,
+             ));
+        $this->hasColumn('current_experience', 'decimal', 11, array(
+             'type' => 'decimal',
+             'scale' => false,
+             'length' => 11,
+             ));
+         $this->hasColumn('notice_period', 'integer', 4, array(
+             'type' => 'integer',
+             'length' => 4,
+             ));
+         $this->hasColumn('project', 'string', 50, array(
+	         'type' => 'string',
+			 'length' => 50,
+         ));
+         $this->hasColumn('referred_by', 'string', 50, array(
+	         'type' => 'string',
+			 'length' => 50,
+         ));
         $this->hasColumn('custom1', 'string', 250, array(
              'type' => 'string',
              'length' => 250,

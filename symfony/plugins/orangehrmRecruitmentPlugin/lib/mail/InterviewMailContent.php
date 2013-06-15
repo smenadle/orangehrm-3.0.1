@@ -37,7 +37,7 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
 		$this->action = $action;
 		$this->jobInterview = $jobInterview;
 		$this->interviewerName = $interviewerName;
-				
+		
 		parent::__construct($this->performer, $this->recipient, $this->candidate, $this->vacancy );
 		
 		$this->populateInterview();
@@ -95,9 +95,7 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
     }
 
     public function getBodyReplacements() {
-
         if (empty($this->bodyReplacements)) {
-            
             if(empty($this->jobInterview)){
             	$this->bodyReplacements = array('recipientFirstName' => $this->replacements['recipientFirstName'],
                                             'candidateName' => $this->replacements['candidateName'],
@@ -125,7 +123,6 @@ class InterviewMailContent extends orangehrmRecruitmentMailContent {
             	
             }
         }
-
         return $this->bodyReplacements;
     }
     

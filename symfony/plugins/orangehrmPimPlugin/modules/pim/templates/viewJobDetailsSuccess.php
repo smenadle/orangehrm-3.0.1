@@ -76,12 +76,32 @@
                             <?php echo $form['joined_date']->render(array("class" => "formDateInput")); ?>
                         </li>
                         <li>
+                            <?php echo $form['total_experience']->renderLabel(__('Total Experience')); ?>
+                            <?php echo $form['total_experience']->render(array("class" => "formInputText")); ?>
+                        </li>
+                        <li>
+                            <?php echo $form['current_experience']->renderLabel(__('Current Experience')); ?>
+                            <?php echo $form['current_experience']->render(array("class" => "formInputText")); ?>
+                        </li>
+                        <li>
+                            <?php echo $form['notice_period']->renderLabel(__('Notice Period')); ?>
+                            <?php echo $form['notice_period']->render(array("class" => "formInputText")); ?>
+                        </li>
+                        <li>
+                            <?php echo $form['project']->renderLabel(__('Project')); ?>
+                            <?php echo $form['project']->render(array("class" => "formInputText")); ?>
+                        </li>
+                        <li>
                             <?php echo $form['sub_unit']->renderLabel(__('Sub Unit')); ?>
                             <?php echo $form['sub_unit']->render(array("class" => "formSelect")); ?>
                         </li>
                         <li>
                             <?php echo $form['location']->renderLabel(__('Location')); ?>
                             <?php echo $form['location']->render(array("class" => "formSelect")); ?>
+                        </li>
+                        <li>
+                            <?php echo $form['referred_by']->renderLabel(__('Referred By')); ?>
+                            <?php echo $form['referred_by']->render(array("class" => "formInputText")); ?>
                         </li>
                         <li>
                             <h2><?php echo __('Employment Contract'); ?></h2>
@@ -348,7 +368,8 @@
         '#job_joined_date', '#job_sub_unit', '#job_location',
         '#contract_file', 'ul.radio_list input',
         '#job_contract_start_date', '#job_contract_end_date',
-        '#job_contract_file');
+        '#job_contract_file', '#job_total_experience','#job_current_experience',
+        '#job_notice_period','#job_project','#job_referred_by');
         for(i=0; i < list.length; i++) {
             $(list[i]).attr("disabled", "disabled");
         }

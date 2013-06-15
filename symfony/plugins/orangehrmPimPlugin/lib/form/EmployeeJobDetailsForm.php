@@ -84,6 +84,11 @@ class EmployeeJobDetailsForm extends BaseForm {
             'eeo_category' => new sfWidgetFormSelect(array('choices' => $eeoCategories)),
             'sub_unit' => new sfWidgetFormSelect(array('choices' => $subDivisions)), // sub division id
             'location' => new sfWidgetFormSelect(array('choices' => $locations)), // sub division name (not used)
+            'total_experience'=> new sfWidgetFormInput(),
+            'current_experience'=> new sfWidgetFormInput(),
+            'notice_period'=> new sfWidgetFormInput(),
+            'project'=> new sfWidgetFormInput(),
+            'referred_by'=> new sfWidgetFormInput(),
             'joined_date' => new ohrmWidgetDatePicker(array(), array('id' => 'job_joined_date')),
             'contract_start_date' => new ohrmWidgetDatePicker(array(), array('id' => 'job_contract_start_date')),
             'contract_end_date' => new ohrmWidgetDatePicker(array(), array('id' => 'job_contract_end_date')),
@@ -130,8 +135,13 @@ class EmployeeJobDetailsForm extends BaseForm {
         $this->setDefault('joined_date', set_datepicker_date_format($employee->joined_date));
 
         $this->setDefault('contract_update', self::CONTRACT_KEEP);
-
-
+        
+        $this->setDefault('total_experience', $employee->total_experience);
+        $this->setDefault('current_experience', $employee->current_experience);
+        $this->setDefault('project', $employee->project);
+        $this->setDefault('referred_by', $employee->referred_by);
+        $this->setDefault('notice_period', $employee->notice_period);
+    
         $this->setValidators(array(
             'emp_number' => new sfValidatorString(array('required' => true)),
             'job_title' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($jobTitles))),
@@ -155,6 +165,11 @@ class EmployeeJobDetailsForm extends BaseForm {
             'contract_file' => new sfValidatorFile(array('required' => false,
                 'max_size' => 1000000), array('max_size' => __(TopLevelMessages::FILE_SIZE_SAVE_FAILURE))),
             'contract_update' => new sfValidatorString(array('required' => false)),
+			'total_experience'=> new sfValidatorNumber(array('required' => false)),
+			'current_experience'=> new sfValidatorNumber(array('required' => false)),
+			'notice_period'=> new sfValidatorNumber(array('required' => false, 'min' => 0)),
+			'project'=> new sfValidatorString(array('required' => false)),
+			'referred_by'=> new sfValidatorString(array('required' => false))
         ));
 
 
@@ -210,6 +225,12 @@ class EmployeeJobDetailsForm extends BaseForm {
         }
         $employee->work_station = $this->getValue('sub_unit');
         $employee->joined_date = $this->getValue('joined_date');
+		$employee->total_experience = $this->getValue('total_experience');
+		$employee->current_experience = $this->getValue('current_experience');
+		$employee->project = $this->getValue('project');
+		$employee->referred_by = $this->getValue('referred_by');
+		$employee->notice_period = $this->getValue('notice_period');
+		
         
         if( $joinedDate != '' && $joinedDate != $this->getValue('joined_date')){
             $this->isJoinDateChanged = true ;

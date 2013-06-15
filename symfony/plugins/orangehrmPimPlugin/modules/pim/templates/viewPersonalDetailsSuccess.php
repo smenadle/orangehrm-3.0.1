@@ -51,6 +51,16 @@ use_stylesheet(plugin_web_path('orangehrmPimPlugin', 'css/viewPersonalDetailsSuc
                         </li>
                     </ol>
                     <ol>
+                    	<li>
+                            <?php echo $form['txtEmpFatherName']->renderLabel(__("Father's Name")); ?>
+                            <?php echo $form['txtEmpFatherName']->render(array("class" => "block default editable", "maxlength" => 100, "title" => __('Father Name'))); ?>
+                        </li>
+                         <li>
+                             <?php echo $form['txtEmpHusbandName']->renderLabel(__("Husband's Name")); ?>
+                             <?php echo $form['txtEmpHusbandName']->render(array("class" => "block default editable", "maxlength" => 100, "title" => __('Husband Name'))); ?>
+                        </li>
+                    </ol>
+                    <ol>
                         <li>
                             <label for="personal_txtEmployeeId"><?php echo __('Employee Id'); ?></label>
                             <?php echo $form['txtEmployeeId']->render(array("maxlength" => 10, "class" => "editable")); ?>
@@ -96,6 +106,10 @@ use_stylesheet(plugin_web_path('orangehrmPimPlugin', 'css/viewPersonalDetailsSuc
                         <li>
                             <label for="personal_DOB"><?php echo __("Date of Birth"); ?></label>
                             <?php echo $form['DOB']->render(array("class"=>"editable")); ?>
+                        </li>
+                        <li>
+                            <label for="personal_Bldgp"><?php echo __("Blood Group"); ?></label>
+                            <?php echo $form['Bldgp']->render(array("class"=>"editable")); ?>
                         </li>
                         <?php if(!$showDeprecatedFields) : ?>
                         <li class="required new">

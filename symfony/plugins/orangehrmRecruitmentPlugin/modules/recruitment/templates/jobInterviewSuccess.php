@@ -74,7 +74,7 @@ use_javascript(plugin_web_path('orangehrmRecruitmentPlugin', 'js/jobInterviewSuc
                     <li>
                         <?php echo $form['time']->renderLabel(__('Time'), array('class' => 'firstLabel')); ?>
                         <?php echo $form['time']->render(array("maxlength" => 20)); ?>            
-                        <label class="hhmm" style="padding-left: 6px">HH:MM</label>
+                        <label class="hhmm" style="padding-left: 6px">HH:MM (24-hour format)</label>
                     </li>
                     <li>
                         <?php echo $form['note']->renderLabel(__('Notes'), array('class' => 'firstLabel')); ?>

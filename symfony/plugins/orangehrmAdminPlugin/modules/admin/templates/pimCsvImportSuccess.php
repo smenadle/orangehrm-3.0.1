@@ -46,7 +46,7 @@
                     <li>
                         <?php echo __("Multiple import files may be required");?>
                     </li>
-                    <li><?php echo __("Sample CSV file").': '; ?>
+                    <li><?php echo __("Synerzip CSV file").': '; ?>
                         <a title="<?php echo __("Download"); ?>" target="_blank" class="download" 
                            href="<?php echo url_for('admin/sampleCsvDownload');?>"><?php echo __("Download"); ?></a>
                     </li>

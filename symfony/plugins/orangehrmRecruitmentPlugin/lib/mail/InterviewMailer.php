@@ -116,15 +116,52 @@ class InterviewMailer extends orangehrmRecruitmentMailer {
 			    $logMessage = "Interview related mail to  $recipientName.  Action taken : $this->action ";
 			    $this->logResult('Success', $logMessage);
 		    } catch (Exception $e) {
-			    
+		    
 			    $logMessage = "Couldn't send interview related semail to $recipientName. Action taken : $this->action";
 			    $logMessage .= '. Reason: ' . $e->getMessage();
 			    $this->logResult('Failure', $logMessage);
 		    }
 	    }
 	    
-    }
-   
+  }
+    
+//    public function sendToHiringManager() {
+//	    $recipients = array();
+//	    $recipients[] = $this->vacancy->getHiringManager();
+//	    $secondaryHiringManager = $this->getEmployeeService()->getEmployee($this->vacancy->getHiringManager1Id());
+//	   
+//	    if(!empty($secondaryHiringManager)){
+//		    $recipients[] = $secondaryHiringManager;
+//	    }
+//	    
+//	    if (count($recipients) > 0) {
+//		    foreach ($recipients as $recipient) {
+//			    if (!empty($recipient)) {
+//				    try {
+//					    $message = new InterviewMailContent($this->performer, $recipient, $this->candidate, $this->vacancy,$this->action,$this->jobInterview, $this->interviewerName);
+//					    if (!empty($this->selectedInterviewerArrayList)) {
+//						    $message->scheduleMeeting();
+//					    }else{
+//						    $recipientName = $recipient->getEmpWorkEmail();
+//						    $this->message->setFrom($this->getSystemFrom());
+//						    $this->message->setTo($recipientName);
+//						    $this->message->setSubject($message->generateSubject());
+//						    $this->message->setBody($message->generateBody());
+//						    $this->mailer->send($this->message);
+//					    }
+//					    $logMessage = "Interview related mail to  $recipientName.  Action taken : $this->action ";
+//					    $this->logResult('Success', $logMessage);
+//				    } catch (Exception $e) {
+//					    
+//					    $logMessage = "Couldn't send interview related semail to $recipientName. Action taken : $this->action";
+//					    $logMessage .= '. Reason: ' . $e->getMessage();
+//					    $this->logResult('Failure', $logMessage);
+//				    }
+//			    }
+//		    }
+//	    }
+//    }
+//   
    
     
     public function sendToInterviewer($interviewerId) {

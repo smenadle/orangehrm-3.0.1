@@ -102,6 +102,10 @@ class EmployeeContactDetailsForm extends sfForm {
         $widgets['emp_work_telephone'] = new sfWidgetFormInput();
         $widgets['emp_work_email'] = new sfWidgetFormInput();
         $widgets['emp_oth_email'] = new sfWidgetFormInput();
+        $widgets['emp_personal_email'] = new sfWidgetFormInput();
+        $widgets['emp_skype_id'] = new sfWidgetFormInput();
+        $widgets['emp_permanent_address'] = new sfWidgetFormTextArea();
+        $widgets['emp_phone_accesscode'] = new sfWidgetFormInput();
 
         //setting the default values
         $widgets['country']->setDefault($this->employee->country);
@@ -116,7 +120,10 @@ class EmployeeContactDetailsForm extends sfForm {
         $widgets['emp_work_telephone']->setDefault($this->employee->emp_work_telephone);
         $widgets['emp_work_email']->setDefault($this->employee->emp_work_email);
         $widgets['emp_oth_email']->setDefault($this->employee->emp_oth_email);
-        
+        $widgets['emp_personal_email']->setDefault($this->employee->emp_personal_email);
+        $widgets['emp_skype_id']->setDefault($this->employee->emp_skype_id);
+        $widgets['emp_permanent_address']->setDefault($this->employee->permanentAddress);
+        $widgets['emp_phone_accesscode']->setDefault($this->employee->emp_phone_accesscode);
         return $widgets;
     }
 
@@ -134,6 +141,10 @@ class EmployeeContactDetailsForm extends sfForm {
             'emp_work_telephone' => new sfValidatorString(array('required' => false)),
             'emp_work_email' => new sfValidatorEmail(array('required' => false)),
             'emp_oth_email' => new sfValidatorEmail(array('required' => false)),
+            'emp_permanent_address' => new sfValidatorString(array('required' => false)),
+            'emp_phone_accesscode' => new sfValidatorString(array('required' => false)),
+            'emp_skype_id' => new sfValidatorString(array('required' => false)),
+            'emp_personal_email' => new sfValidatorString(array('required' => false)),
         );
         return $validators;
     }
@@ -197,6 +208,10 @@ class EmployeeContactDetailsForm extends sfForm {
         $employee->emp_work_telephone = $this->getValue('emp_work_telephone');
         $employee->emp_work_email = $this->getValue('emp_work_email');
         $employee->emp_oth_email = $this->getValue('emp_oth_email');
+        $employee->permanentAddress = $this->getValue('emp_permanent_address');
+        $employee->emp_phone_accesscode = $this->getValue('emp_phone_accesscode');
+        $employee->emp_skype_id = $this->getValue('emp_skype_id');
+        $employee->emp_personal_email = $this->getValue('emp_personal_email');
 
         return $employee;
         

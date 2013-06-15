@@ -228,6 +228,11 @@ class JobInterviewForm extends BaseForm {
                 $newInterviewer->setInterviewId($interviewId);
                 $newInterviewer->save();
             }
+        }else{
+        	 $interviewers = $newJobInterview->getJobInterviewInterviewer();
+        	 foreach ($interviewers as $interviewer) {
+        	 	$selectedInterviewerArrayList[] = $interviewer->getInterviewerId();
+        	 }
         }
          //Now send mail to HR admin and Hiring manager
         $interviewMailer = new InterviewMailer($empNumber, $this->candidateId, $this->vacancyId,$this->selectedAction, $newJobInterview, $selectedInterviewerArrayList);

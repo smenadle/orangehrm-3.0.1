@@ -42,6 +42,9 @@
                 <?php echo $form['_csrf_token']; ?>
                 <?php echo $form['empNumber']->render(); ?>
                 <fieldset>
+                	<ol>
+                		<li><li><h3><?php echo __('Mailing Address'); ?></h3></li></li>
+                	</ol>
                     <ol>
                         <li>
                             <?php echo $form['street1']->renderLabel(__("Address Street 1")); ?>
@@ -70,17 +73,27 @@
                         </li>                        
                     </ol>
                     <ol>
-                        <li>
-                            <?php echo $form['emp_hm_telephone']->renderLabel(__("Home Telephone")); ?>
-                            <?php echo $form['emp_hm_telephone']->render(array("class" => "formInputText", "maxlength" => 25)); ?>
-                        </li>
+                    	<li>
+                    	  	<?php echo $form['emp_permanent_address']->renderLabel(__('Permanent Address')); ?>
+                        	<?php echo $form['emp_permanent_address']->render(array("class" => "formInputText", "cols" => 30, "rows" => 7)); ?>
+                    	</li>
+                    </ol>
+                    <ol>
                         <li>
                             <?php echo $form['emp_mobile']->renderLabel(__("Mobile")); ?>
                             <?php echo $form['emp_mobile']->render(array("class" => "formInputText", "maxlength" => 25)); ?>
                         </li>
                         <li>
+                            <?php echo $form['emp_hm_telephone']->renderLabel(__("Home/Emergency Telephone")); ?>
+                            <?php echo $form['emp_hm_telephone']->render(array("class" => "formInputText", "maxlength" => 25)); ?>
+                        </li>
+                        <li>
                             <?php echo $form['emp_work_telephone']->renderLabel(__("Work Telephone")); ?>
                             <?php echo $form['emp_work_telephone']->render(array("class" => "formInputText", "maxlength" => 25)); ?>
+                        </li>
+                        <li>
+                            <?php echo $form['emp_phone_accesscode']->renderLabel(__("Access Code")); ?>
+                            <?php echo $form['emp_phone_accesscode']->render(array("class" => "formInputText", "maxlength" => 25)); ?>
                         </li>
                     </ol>
                     <ol>
@@ -89,9 +102,18 @@
                             <?php echo $form['emp_work_email']->render(array("class" => "formInputText", "maxlength" => 50)); ?>
                         </li>
                         <li>
-                            <?php echo $form['emp_oth_email']->renderLabel(__("Other Email")); ?>
+                            <?php echo $form['emp_oth_email']->renderLabel(__("Project Email")); ?>
                             <?php echo $form['emp_oth_email']->render(array("class" => "formInputText", "maxlength" => 50)); ?>
                         </li>
+                        <li>
+                            <?php echo $form['emp_personal_email']->renderLabel(__("Personal Email")); ?>
+                            <?php echo $form['emp_personal_email']->render(array("class" => "formInputText", "maxlength" => 50)); ?>
+                        </li>
+                        <li>
+                            <?php echo $form['emp_skype_id']->renderLabel(__("Skype ID")); ?>
+                            <?php echo $form['emp_skype_id']->render(array("class" => "formInputText", "maxlength" => 50)); ?>
+                        </li>
+                        
                     </ol>
                     <?php if ($contactDetailsPermission->canUpdate()) : ?>
                     <p>

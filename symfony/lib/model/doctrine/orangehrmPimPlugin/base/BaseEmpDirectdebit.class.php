@@ -54,7 +54,6 @@ abstract class BaseEmpDirectdebit extends sfDoctrineRecord
              ));
         $this->hasColumn('dd_routing_num as routing_num', 'integer', 9, array(
              'type' => 'integer',
-             'notnull' => true,
              'length' => 9,
              ));
         $this->hasColumn('dd_account as account', 'string', 100, array(
@@ -65,7 +64,6 @@ abstract class BaseEmpDirectdebit extends sfDoctrineRecord
              ));
         $this->hasColumn('dd_amount as amount', 'decimal', 11, array(
              'type' => 'decimal',
-             'notnull' => true,
              'scale' => false,
              'length' => 11,
              ));

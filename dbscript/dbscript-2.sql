@@ -2409,3 +2409,9 @@ INSERT INTO ohrm_module_default_page (`module_id`, `user_role_id`, `action`, `en
 (7, 6, 'recruitment/viewCandidates', NULL, 5),
 (9, 1, 'performance/viewReview', NULL, 20),
 (9, 2, 'performance/viewReview', NULL, 0);
+
+INSERT INTO `hs_hr_custom_fields` (`field_num`, `name`, `type`, `screen`, `extra_data`) VALUES
+('1','PAN Number','0','salary',''),
+('2','EPF Account Number','0','salary',''),
+('3','HDFC Meal Card','0','salary',''),
+('4','LinkedIn URL','0','job','');

@@ -74,11 +74,11 @@
                             <?php echo $directDepositForm['account_type_other']->render(array("class" => "formInputText", "maxlength" => 20)); ?>
                         </li>
                         <li> 
-                            <?php echo $directDepositForm['routing_num']->renderLabel(__('Routing Number') . ' <em>*</em>'); ?>
+                            <?php echo $directDepositForm['routing_num']->renderLabel(__('Routing Number (MICR Code)') ); ?>
                             <?php echo $directDepositForm['routing_num']->render(array("class" => "formInputText", "maxlength" => 9)); ?>
                         </li>
                         <li>
-                            <?php echo $directDepositForm['amount']->renderLabel(__('Amount') . ' <em>*</em>'); ?>
+                            <?php echo $directDepositForm['amount']->renderLabel(__('Amount')); ?>
                             <?php echo $directDepositForm['amount']->render(array("class" => "formInputText", "maxlength" => 12)); ?>
                         </li>
                         <li class="required">
@@ -543,8 +543,8 @@
                     }
                 },
                 maxlength:20},
-            'directdeposit[routing_num]': {required: "#salary_set_direct_debit:checked", digits:true},
-            'directdeposit[amount]': {required: "#salary_set_direct_debit:checked", number:true, min: 0, max:1000000000.00}
+            'directdeposit[routing_num]': {digits:true},
+            'directdeposit[amount]': {number:true, min: 0, max:1000000000.00}
         },
         messages: {
             'salary[currency_id]': {required: lang_currencyRequired},
@@ -554,8 +554,8 @@
             'directdeposit[account]': {required: lang_accountRequired, maxlength: lang_accountMaxLength},
             'directdeposit[account_type]': {required: lang_accountTypeRequired},
             'directdeposit[account_type_other]': {required: lang_otherRequired, maxlength: lang_otherMaxLength},
-            'directdeposit[routing_num]': {required: lang_routingNumRequired, digits: lang_routingNumInteger},
-            'directdeposit[amount]': {required: lang_amountRequired, number: lang_depositAmountShouldBeNumber, min: lang_negativeAmount, max:lang_tooLargeAmount}
+            'directdeposit[routing_num]': {digits: lang_routingNumInteger},
+            'directdeposit[amount]': {number: lang_depositAmountShouldBeNumber, min: lang_negativeAmount, max:lang_tooLargeAmount}
             
         }
     });
