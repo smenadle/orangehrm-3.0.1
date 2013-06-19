@@ -40,7 +40,6 @@ $(document).ready(function() {
     $("#frmAddEmp").validate({
         rules: {
             'firstName': {required: true },
-            'lastName': { required: true },
             'user_name': { validateLoginName: true, onkeyup: 'if_invalid'},
             'user_password': {validatePassword: true, onkeyup: 'if_invalid'},
             're_password': {validateReCheckPassword: true, onkeyup: 'if_invalid'},
@@ -49,7 +48,6 @@ $(document).ready(function() {
         },
         messages: {
             'firstName': { required: lang_firstNameRequired },
-            'lastName': { required: lang_lastNameRequired },
             'user_name': { validateLoginName: lang_userNameRequired },
             'user_password': {validatePassword: lang_passwordRequired},
             're_password': {validateReCheckPassword: lang_unMatchingPassword},

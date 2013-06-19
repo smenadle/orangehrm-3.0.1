@@ -26,6 +26,8 @@ class PimCsvDataImport extends CsvDataImport {
 	//private $logger;
 
 	public function import($data) {
+		
+		set_time_limit(90);
 		if ($data[0] == "" || strlen($data[0]) > 30) {
 			return false;
 		}
@@ -236,7 +238,7 @@ class PimCsvDataImport extends CsvDataImport {
         }
        
        	
-        if(($data[46] != "" ) && (strlen($data[46])<= 50)){
+        if(($data[46] != "" ) && ($data[46] != '0' ) && (strlen($data[46])<= 50)){
         	$sequence1 = 1;//$this->getDependentSeqNo($employee->getEmpNumber());
 	        $dependent1 = $this->getEmployeeDependent($employee->getEmpNumber(),$sequence1);
 	        $dependent1->setEmployee($employee);
@@ -250,7 +252,7 @@ class PimCsvDataImport extends CsvDataImport {
 	        $dependent1->save();
         }
         
-       if(($data[50] != "" ) && (strlen($data[50])<= 50)){
+       if(($data[50] != "" ) && ($data[50] != '0' )  && (strlen($data[50])<= 50)){
        		$sequence2 = 2;//$this->getDependentSeqNo($employee->getEmpNumber());
 	        $dependent2 = $this->getEmployeeDependent($employee->getEmpNumber(),$sequence2);
 	        $dependent2->setEmployee($employee);
@@ -264,7 +266,7 @@ class PimCsvDataImport extends CsvDataImport {
 	        $dependent2->save();
         }
         
-        if(($data[54] != "" ) && (strlen($data[54])<= 50)){
+        if(($data[54] != "" ) && ($data[54] != '0' ) && (strlen($data[54])<= 50)){
         	$sequence3 = 3;//$this->getDependentSeqNo($employee->getEmpNumber());
 	        $dependent3 = $this->getEmployeeDependent($employee->getEmpNumber(),$sequence3);
 	        $dependent3->setEmployee($employee);

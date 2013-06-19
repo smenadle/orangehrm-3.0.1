@@ -108,7 +108,7 @@ class AddEmployeeForm extends sfForm {
             'photofile' => new sfValidatorFile(array('max_size' => 1000000, 'required' => false)),
             'firstName' => new sfValidatorString(array('required' => true, 'max_length' => 30, 'trim' => true)),
             'empNumber' => new sfValidatorString(array('required' => false)),
-            'lastName' => new sfValidatorString(array('required' => true, 'max_length' => 30, 'trim' => true)),
+            'lastName' => new sfValidatorString(array('required' => false, 'max_length' => 30, 'trim' => true)),
             'middleName' => new sfValidatorString(array('required' => false, 'max_length' => 30, 'trim' => true)),
             'employeeId' => new sfValidatorString(array('required' => false, 'max_length' => 10)),
             'chkLogin' => new sfValidatorString(array('required' => false)),
@@ -126,7 +126,7 @@ class AddEmployeeForm extends sfForm {
         
         $customRowFormats[0] = "<li class=\"line nameContainer\"><label class=\"hasTopFieldHelp\">". __('Full Name') . "</label><ol class=\"fieldsInLine\"><li><div class=\"fieldDescription\"><em>*</em> ". __('First Name') . "</div>\n %field%%help%\n%hidden_fields%%error%</li>\n";
         $customRowFormats[1] = "<li><div class=\"fieldDescription\">". __('Middle Name') . "</div>\n %field%%help%\n%hidden_fields%%error%</li>\n";
-        $customRowFormats[2] = "<li><div class=\"fieldDescription\"><em>*</em> ". __('Last Name') . "</div>\n %field%%help%\n%hidden_fields%%error%</li>\n</ol>\n</li>";
+        $customRowFormats[2] = "<li><div class=\"fieldDescription\">". __('Last Name') . "</div>\n %field%%help%\n%hidden_fields%%error%</li>\n</ol>\n</li>";
         $customRowFormats[6] = "<li class=\"loginSection\">%label%\n %field%%help%\n%hidden_fields%%error%</li>\n";
         $customRowFormats[7] = "<li class=\"loginSection\">%label%\n %field%%help%\n%hidden_fields%%error%</li>\n";
         $customRowFormats[8] = "<li class=\"loginSection\">%label%\n %field%%help%\n%hidden_fields%%error%</li>\n";

@@ -29,7 +29,7 @@
 
 <div id="addCandidate" class="box">
 		<div align="right">
-	    	Welcome  <?php echo $_SESSION['fname']?> &nbsp;&nbsp;&nbsp; <a href="/orangehrm/symfony/web/index.php/auth/logout" target="_parent">Logout</a>
+	    	Welcome  <?php echo $_SESSION['fname']?> &nbsp;&nbsp;&nbsp; <a href="<?php echo url_for('auth/logout'); ?>"><?php echo __('Logout'); ?></a>
 	    </div>
 	    <br>
 

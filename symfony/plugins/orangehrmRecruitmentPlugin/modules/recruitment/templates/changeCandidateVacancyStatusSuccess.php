@@ -65,8 +65,16 @@
                     <?php endif; ?>
 
                     <li>
-                        <?php echo $form['notes']->renderLabel(__('Notes')); ?>
-                        <?php echo $form['notes']->render(array("class" => "formInputText", 'max_length' => 2147483647, "cols" => 40, "rows" => 9)); ?>
+                        <?php echo $form['notes']->renderLabel(__('Feedback')); ?>
+                        <?php echo $form['notes']->render(array( 'max_length' => 2147483647,  "width" => 400, "height"=>150)); ?>
+                        <label style='width:300px' for="format">
+		                        	<u>Give feedback in below specified format</u>
+		                        	<p>Professional Skills:</p>
+		                        	<p>Attitude:</p>
+		                        	<p>Communication:</p>
+		                        	<p>Summary:</p>
+		                        	<p>Comments (If any):</p>
+                        </label>
                     </li>
                 </ol>
                 <p>

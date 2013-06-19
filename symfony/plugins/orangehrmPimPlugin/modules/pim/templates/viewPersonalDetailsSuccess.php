@@ -44,7 +44,7 @@ use_stylesheet(plugin_web_path('orangehrmPimPlugin', 'css/viewPersonalDetailsSuc
                                     <?php echo $form['txtEmpMiddleName']->render(array("class" => "block default editable", "maxlength" => 30, "title" => __('Middle Name'))); ?>
                                 </li>
                                 <li>
-                                    <div class="fieldDescription"><em>*</em> <?php echo __('Last Name'); ?></div>
+                                    <div class="fieldDescription"><?php echo __('Last Name'); ?></div>
                                     <?php echo $form['txtEmpLastName']->render(array("class" => "block default editable", "maxlength" => 30, "title" => __('Last Name'))); ?>
                                 </li>
                             </ol>    

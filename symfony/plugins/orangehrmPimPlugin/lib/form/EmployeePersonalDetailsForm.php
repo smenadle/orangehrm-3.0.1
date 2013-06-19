@@ -188,7 +188,7 @@ class EmployeePersonalDetailsForm extends BaseForm {
             'txtEmpMiddleName' => new sfValidatorString(array('required' => false, 'max_length' => 30, 'trim' => true), array('max_length' => 'Middle Name Length exceeded 30 characters')),
             'txtEmpFatherName' => new sfValidatorString(array('required' => false, 'max_length' => 100, 'trim' => true), array('max_length' => 'Father Name Length exceeded 100 characters')),
             'txtEmpHusbandName' => new sfValidatorString(array('required' => false, 'max_length' => 100, 'trim' => true), array('max_length' => 'Husband Name Length exceeded 100 characters')),
-            'txtEmpLastName' => new sfValidatorString(array('required' => true, 'max_length' => 30, 'trim' => true),
+            'txtEmpLastName' => new sfValidatorString(array('required' => false, 'max_length' => 30, 'trim' => true),
                     array('required' => 'Last Name Empty!', 'max_length' => 'Last Name Length exceeded 30 characters')),
             'txtEmpNickName' => new sfValidatorString(array('required' => false, 'trim' => true)),
             'optGender' => new sfValidatorChoice(array('required' => false,

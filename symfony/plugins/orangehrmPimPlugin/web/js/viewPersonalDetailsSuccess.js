@@ -4,13 +4,11 @@ $(document).ready(function() {
     $("#frmEmpPersonalDetails").validate({
         rules: {
             'personal[txtEmpFirstName]': {required: true },
-            'personal[txtEmpLastName]': { required: true },
             'personal[DOB]': { required: false, valid_date: function(){ return {format:datepickerDateFormat, required:false, displayFormat:displayDateFormat} } },
             'personal[txtLicExpDate]': { required: false, valid_date: function(){ return {format:datepickerDateFormat, required:false, displayFormat:displayDateFormat} } }
         },
         messages: {
             'personal[txtEmpFirstName]': { required: lang_firstNameRequired },
-            'personal[txtEmpLastName]': { required: lang_lastNameRequired },
             'personal[DOB]': { valid_date: lang_invalidDate },
             'personal[txtLicExpDate]': { valid_date: lang_invalidDate }
         }
